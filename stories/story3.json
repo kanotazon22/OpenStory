@@ -1,0 +1,591 @@
+{
+  "title": "Lời Thề Dưới Cờ Liên Huy",
+  "description": "Thế kỷ XII–XIII. Một hành trình dài hơn, nhiều bí ẩn hơn, nhiều lựa chọn và hệ quả sâu sắc — lời thề, tham vọng và hậu quả sẽ định mệnh một vùng đất.",
+  "author": "Xiêm nhé",
+  "difficulty": "Khó",
+  "estimatedTime": "120-240 phút",
+  "icon": "",
+  "scenes": {
+    "start": {
+      "text": "Sương mù buổi sớm phủ mỏng trên đồng cỏ. Trên mặt đất còn vết gươm và dấu guốc. Xa kia cờ liên huy của một lãnh chúa phấp phới trên pháo đài đổ nát. Trước mặt có hai đường: lối mòn xuyên rừng cổ và con đường đá dẫn về dinh thự tàn tích. Gió mang theo mùi tro và khói xa.",
+      "image": "assets/images/medieval_start.png",
+      "choices": [
+        { "text": "Bước vào lối mòn rừng — nghe lời gọi của cây cỏ", "nextScene": "hermit" },
+        { "text": "Đi về phía dinh thự tàn — tìm manh mối giữa đổ nát", "nextScene": "manor" },
+        { "text": "Quan sát vùng, tìm dấu vết khác trên đồng", "nextScene": "field_tracks" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "field_tracks": {
+      "text": "Bạn dò theo những dấu guốc: có dấu chân trẻ em và dấu xe nhỏ hướng về phía một xưởng gỗ ven đường. Có tiếng mèo rình rập và một chiếc khăn vương trên gốc cây — có vẻ ai đó đã chạy qua gần đây.",
+      "image": "assets/images/medieval_tracks.png",
+      "choices": [
+        { "text": "Theo dấu chân đến xưởng gỗ", "nextScene": "woodwright" },
+        { "text": "Quay về lối mòn rừng", "nextScene": "hermit" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "woodwright": {
+      "text": "Xưởng gỗ vắng, nhưng trên bàn thợ để lại một chiếc mảnh dây thừng và mảnh vải thêu hoa văn lạ — biểu tượng giống với 'Cờ Liên Huy' đã thấy. Một đứa trẻ lẩn trốn phía sau lều nhìn bạn bằng ánh mắt sợ sệt.",
+      "image": "assets/images/medieval_woodwright.png",
+      "choices": [
+        { "text": "An ủi đứa trẻ, hỏi chuyện", "nextScene": "child_help" },
+        { "text": "Lôi mảnh vải về để so sánh", "nextScene": "old_mason" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "child_help": {
+      "text": "Đứa trẻ run rẩy kể rằng gia đình họ từng giữ một mảnh ký tự liên quan đến viên quang, nhưng bọn cướp đã tới. Nó chỉ ra một hang nhỏ nơi người ta có thể giấu đồ quý.",
+      "image": "assets/images/medieval_child.png",
+      "choices": [
+        { "text": "Đi kiểm tra hang nhỏ theo chỉ dẫn", "nextScene": "hidden_cache" },
+        { "text": "Đưa đứa trẻ về làng để tìm giúp đỡ", "nextScene": "village" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "hidden_cache": {
+      "text": "Trong hang bạn tìm thấy một mảnh bản đồ bị xé và một lá thư ngắn: 'Nếu viên quang trở lại, giữ nó khỏi thanh kiếm lãnh chúa.' Có vết chữ bị mờ và một ký hiệu lạ khắc trên đá.",
+      "image": "assets/images/medieval_cache.png",
+      "choices": [
+        { "text": "Ghi nhớ ký hiệu và tiếp tục hành trình", "nextScene": "hermit" },
+        { "text": "Mang mảnh bản đồ đến thợ xây (Old Mason)", "nextScene": "old_mason" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "hermit": {
+      "text": "Giữa rừng, một ẩn sĩ áo rách trao bạn bản đồ da và nhắc về 'điềm' dưới gốc bạch đàn. Ông cảnh báo về kẻ lạ và lời thề đã bị lãng quên. Ông có vẻ biết nhiều nhưng dè dặt.",
+      "image": "assets/images/medieval_hermit.png",
+      "choices": [
+        { "text": "Nhận bản đồ và hỏi về nghi lễ xưa", "nextScene": "river" },
+        { "text": "Cảm tạ rồi lẻn đi, tránh sự dính líu", "nextScene": "marsh_trap" },
+        { "text": "Yêu cầu ẩn sĩ theo bạn làm chứng", "nextScene": "hermit_companion" },
+        { "text": "Hỏi về ký hiệu bạn tìm được ở hang", "nextScene": "hermit_past" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "hermit_past": {
+      "text": "Ẩn sĩ im lặng, rồi tiết lộ ông từng là người giữ lễ nhưng bỏ trốn sau một vụ bội tín. Ông trao cho bạn một lá bùa nhỏ và dặn rằng không nên tin mọi kẻ mang áo sứt chỉ.",
+      "image": "assets/images/medieval_hermit_past.png",
+      "choices": [
+        { "text": "Nhận lá bùa, tiếp tục tới suối", "nextScene": "river" },
+        { "text": "Khước từ, đi một mình", "nextScene": "manor" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "hermit_companion": {
+      "text": "Ẩn sĩ đồng ý đi cùng một đoạn, chỉ ra dấu hiệu sức mạnh và liệt kê vài người giữ lễ xưa. Sự hiện diện của ông giúp mở lòng nhiều người bạn gặp sau này.",
+      "image": "assets/images/medieval_hermit_companion.png",
+      "choices": [
+        { "text": "Tiếp tục cùng ông tới suối", "nextScene": "river" },
+        { "text": "Lợi dụng ông, rẽ sang làng để thu thập thông tin", "nextScene": "village" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "manor": {
+      "text": "Dinh thự tàn hoang có hầm, tháp canh và thư tịch bị cháy. Bạn tìm thấy một lá thư nói về 'viên quang' và một bản đồ nửa mờ. Một phụ nữ góa đứng ở góc sân nhìn bạn như tìm kiếm điều gì đó.",
+      "image": "assets/images/medieval_manor.png",
+      "choices": [
+        { "text": "Xuống hầm kho — tìm thư tịch", "nextScene": "cellar" },
+        { "text": "Leo tháp canh — quan sát vùng", "nextScene": "watchtower" },
+        { "text": "Nói chuyện với người góa", "nextScene": "widow" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "widow": {
+      "text": "Người góa kể về một đội kị sĩ từng đến đòi viên quang. Chồng bà từng là người gác cổng cho lễ, bị bắt và đưa đi. Bà trao cho bạn một mảnh dây chuyền có khắc ký hiệu gia tộc.",
+      "image": "assets/images/medieval_widow.png",
+      "choices": [
+        { "text": "Mang dây chuyền đến thợ rèn để kiểm tra", "nextScene": "blacksmith" },
+        { "text": "Giữ và tiếp tục xuống hầm", "nextScene": "cellar" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "cellar": {
+      "text": "Trong hầm, sách cũ và lá thư của cựu bá chủ nói: 'Ánh quang phải được gìn giữ.' Bức ký tự cho thấy viên quang từng được đặt dưới 'Cờ Liên Huy'. Một đường hầm nhỏ dẫn ra bờ suối.",
+      "image": "assets/images/medieval_cellar.png",
+      "choices": [
+        { "text": "Theo đường hầm ra suối", "nextScene": "river" },
+        { "text": "Mang thư tịch tới tu viện xin hướng dẫn", "nextScene": "monastery" },
+        { "text": "Đi tìm thư viện ẩn trong pháo đài (secret_library)", "nextScene": "secret_library" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "secret_library": {
+      "text": "Bạn tìm thấy cánh cửa bí mật dẫn tới thư viện nhỏ với sách cổ về nghi lễ và một bản gia phả ghi tên những 'Người Giữ Cờ'. Có một mã ký hiệu ghép từ ba hình tượng.",
+      "image": "assets/images/medieval_library.png",
+      "choices": [
+        { "text": "Ghi lại mã ký hiệu, đem đến crypt", "nextScene": "crypt" },
+        { "text": "Giấu kiến thức và dùng để mặc cả", "nextScene": "merchant_caravan" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "watchtower": {
+      "text": "Từ tháp canh bạn thấy làng cháy và pháo đài đang tụ tập quân. Một lá cờ đặc trưng bay trên pháo đài — cùng huy hiệu với mảnh dây chuyền của góa phụ. Có khả năng lãnh chúa đang tìm viên quang để củng cố quyền lực.",
+      "image": "assets/images/medieval_watchtower.png",
+      "choices": [
+        { "text": "Ghi nhớ hướng, xuống và tới Cờ Liên Huy", "nextScene": "ritual_clearing" },
+        { "text": "Tìm cách liên lạc với kị sĩ để đàm phán", "nextScene": "knight_encounter" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "river": {
+      "text": "Bản đồ dẫn đến suối nơi người lái đò già canh chừng thuyền. Ông kể về nhóm 'Người Giữ Cờ' và cảnh báo có kẻ muốn lợi dụng viên quang cho chiến tranh. Ông đề nghị phí hoặc ân huệ.",
+      "image": "assets/images/medieval_river.png",
+      "choices": [
+        { "text": "Trả bạc cho ông lái đò", "nextScene": "ford_ferryman" },
+        { "text": "Mời ông đi cùng để đổi lấy bảo trợ", "nextScene": "ferryman_companion" },
+        { "text": "Quan sát bến, tìm caravan hoặc làng gần đó", "nextScene": "merchant_caravan" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "ford_ferryman": {
+      "text": "Người lái đò chèo bạn qua an toàn và tiết lộ đường tắt ẩn dưới rễ. Ông cảnh báo về một viên đá có khắc ba biểu tượng — nếu bạn ghép đúng, lối tới gốc cây sẽ mở.",
+      "image": "assets/images/medieval_ferryman.png",
+      "choices": [
+        { "text": "Theo mô tả tới ritual_clearing", "nextScene": "ritual_clearing" },
+        { "text": "Yêu cầu đưa tới một làng gần để thu thập thông tin", "nextScene": "village" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "ferryman_companion": {
+      "text": "Ông lái đò đồng ý đi cùng nếu bạn giúp sửa mái thuyền — qua đó bạn xây dựng mối quan hệ và nhận được lời hẹn của một người biết chữ cổ.",
+      "image": "assets/images/medieval_ferryman_companion.png",
+      "choices": [
+        { "text": "Tìm người biết chữ ở làng (thợ rèn)", "nextScene": "village" },
+        { "text": "Đi thẳng theo bản đồ được gia cố", "nextScene": "ritual_clearing" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "merchant_caravan": {
+      "text": "Đoàn thương nhân dừng bên đường. Họ biết kẻ giả dạng cướp mới đây và một kẻ làm giả bản đồ. Họ đồng ý chia sẻ thông tin nếu bạn giúp bảo vệ một chuyến hàng quan trọng.",
+      "image": "assets/images/medieval_caravan.png",
+      "choices": [
+        { "text": "Đồng ý hộ tống chuyến hàng", "nextScene": "escort" },
+        { "text": "Từ chối, tiếp tục hành trình theo bản đồ", "nextScene": "village" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "escort": {
+      "text": "Hộ tống caravan dẫn tới cuộc chạm trán với băng cướp. Bạn có thể quyết định chiến đấu kiên cường hoặc dùng mưu kế để buông thả vật quý cho họ mà giữ thông tin.",
+      "image": "assets/images/medieval_escort.png",
+      "choices": [
+        { "text": "Chiến đấu bảo vệ caravan", "nextScene": "bandit_ambush" },
+        { "text": "Đổi vật quý lấy thông tin và đường thoát", "nextScene": "abandoned_chapel" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "village": {
+      "text": "Ngôi làng nhỏ nằm nép dưới chân đồi. Thợ rèn, bà phù thủy, và trưởng làng có góc nhìn khác nhau về viên quang: cứu trợ, bảo quản hay tiêu hủy.",
+      "image": "assets/images/medieval_village.png",
+      "choices": [
+        { "text": "Lắng nghe bà phù thủy — nhận bí pháp làm sạch", "nextScene": "healer" },
+        { "text": "Kết nối với trưởng làng — hợp tác tập thể", "nextScene": "council_choice" },
+        { "text": "Tìm thư ký học giả trong nhà thờ", "nextScene": "scholar" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "healer": {
+      "text": "Bà phù thủy cho bạn một lọ thuốc giải và một bài kinh cổ để tăng cơ hội khi nghi thức. Bà cảnh báo: 'Viên quang phản chiếu tâm kẻ cầm nó.' Bà còn nhắc tới một 'Hang Trăng' nơi linh khí tụ.",
+      "image": "assets/images/medieval_healer.png",
+      "choices": [
+        { "text": "Nhận thuốc, tới nghi thức", "nextScene": "ritual_clearing" },
+        { "text": "Yêu cầu chỉ ra Hang Trăng", "nextScene": "moon_grove" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "moon_grove": {
+      "text": "Hang Trăng là một rừng nhỏ nơi đất ẩm, cây mọc xiêu vẹo, ánh trăng xuyên qua tán như bạc. Ở đó bạn tìm thấy một dấu ấn — một viên đá nhỏ bích xanh có khắc chữ nổi.",
+      "image": "assets/images/medieval_moon_grove.png",
+      "choices": [
+        { "text": "Mang viên đá tới crypt để đối chiếu", "nextScene": "crypt" },
+        { "text": "Giấu viên đá để dùng trong nghi thức", "nextScene": "ritual_prep" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scholar": {
+      "text": "Học giả tu viện mở cuộn sách cổ, đọc câu thơ mật liên quan đến ba biểu tượng. Ông chỉ ra rằng nếu ba biểu tượng ghép đúng, viên quang sẽ 'đáp' vào lòng đất an toàn.",
+      "image": "assets/images/medieval_scholar.png",
+      "choices": [
+        { "text": "Yêu cầu ông giúp khi nghi thức", "nextScene": "ritual_prep" },
+        { "text": "Ghi chú thông tin rồi rời đi", "nextScene": "ritual_clearing" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "crypt": {
+      "text": "Trong crypt, bạn tìm thấy lông chim bạc và bản ghi chép về những người giữ lễ. Có một câu đố khắc trên đá: 'Ai giữ thẻ, mẹ sẽ gọi, ai vỡ lời sẽ mất phương hướng.'",
+      "image": "assets/images/medieval_crypt.png",
+      "choices": [
+        { "text": "Giải câu đố bằng cách đem mảnh vải và đá bích", "nextScene": "relic_puzzle" },
+        { "text": "Mang chứng tích tới nghi thức tập thể", "nextScene": "ritual_clearing" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "relic_puzzle": {
+      "text": "Bạn ghép mảnh vải, viên đá bích và mã ký hiệu từ thư viện — một cánh cửa đá hé mở trong crypt, lộ ra một huy hiệu nhỏ và một bản khắc: 'Người nào có huy hiệu sẽ được đón nhận, nhưng phải minh bạch.'",
+      "image": "assets/images/medieval_relic_puzzle.png",
+      "choices": [
+        { "text": "Mang huy hiệu tới vòng đá để tăng uy tín", "nextScene": "ritual_clearing" },
+        { "text": "Giữ huy hiệu làm đòn bẩy", "nextScene": "oak_shrine" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "abandoned_chapel": {
+      "text": "Nhà nguyện bỏ hoang che chở bạn khỏi mưa. Bạn tìm được bản thánh ca và dấu vết của lễ hiến xưa — chìa khóa tinh thần để tiếp cận viên quang mà không bị tham vọng làm mờ.",
+      "image": "assets/images/medieval_chapel.png",
+      "choices": [
+        { "text": "Học bản thánh ca, tới nghi thức", "nextScene": "ritual_clearing" },
+        { "text": "Ở lại, giúp người sống gần đó", "nextScene": "village" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "bandit_ambush": {
+      "text": "Bạn rơi vào bẫy: cướp vây. Một vị kị sĩ bất ngờ can thiệp — ông đề nghị cùng hợp tác nếu bạn tiết lộ manh mối bạn biết. Có lựa chọn giữ bí mật hay hợp tác.",
+      "image": "assets/images/medieval_ambush.png",
+      "choices": [
+        { "text": "Hợp tác với kị sĩ — ông dẫn tới một liên minh", "nextScene": "knight_encounter" },
+        { "text": "Giấu manh mối và đánh lui bọn cướp", "nextScene": "infiltration" },
+        { "text": "Hy sinh vật phẩm để cứu đoàn", "nextScene": "abandoned_chapel" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "infiltration": {
+      "text": "Bạn lẻn vào trại địch, đánh cắp bản đồ và một lá cờ — hành động khiến thủ lĩnh cướp thù hằn. Bạn có thông tin quý giá nhưng đối mặt rủi ro trả thù. Trên cờ có ký hiệu thứ ba bạn từng gặp.",
+      "image": "assets/images/medieval_infiltration.png",
+      "choices": [
+        { "text": "Mang bản đồ thu được tới Cờ Liên Huy", "nextScene": "oak_shrine" },
+        { "text": "Giao bản đồ cho làng để đổi lấy hỗ trợ", "nextScene": "council_choice" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "knight_encounter": {
+      "text": "Kị sĩ hỏi về mục đích của bạn. Họ bảo vệ vùng này theo thề cổ. Nếu được tin tưởng, họ sẽ dẫn bạn gần tới gốc cây — nhưng đổi lại bạn phải hỗ trợ họ trong đại sự với lãnh chúa.",
+      "image": "assets/images/medieval_knight.png",
+      "choices": [
+        { "text": "Thề giúp họ trong nhiệm vụ, nhận chỉ dẫn", "nextScene": "ally_reveal" },
+        { "text": "Từ chối liên minh, tiếp tục một mình", "nextScene": "oak_shrine" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "ally_reveal": {
+      "text": "Lão kị sĩ dẫn bạn đến trụ trì cũ. Ông xác nhận viên quang từng được dùng để bảo vệ mùa màng. Ông đề nghị nghi thức làm sạch nếu bạn muốn trao viên quang lại cho cộng đồng. Ông cũng cảnh báo về lựa chọn chôn viên quang để tránh chiến tranh.",
+      "image": "assets/images/medieval_ally.png",
+      "choices": [
+        { "text": "Nhận nghi thức làm sạch (hỗ trợ cộng đồng)", "nextScene": "ritual_prep" },
+        { "text": "Lên kế hoạch chôn viên quang theo lời khuyên kị sĩ", "nextScene": "council_choice" },
+        { "text": "Bắt tay chống lãnh chúa — chọn đối đầu", "nextScene": "mountain_pass" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "mountain_pass": {
+      "text": "Một con đường núi dẫn tới pháo đài của lãnh chúa. Trên đường bạn gặp lính gác kiên quyết. Một quyết định mạo hiểm: tấn công bí mật hoặc thỏa thuận với một thủ hạ lãnh chúa.",
+      "image": "assets/images/medieval_mountain_pass.png",
+      "choices": [
+        { "text": "Gây nhiễu về đêm — đánh chiếm trạm gác", "nextScene": "betrayal" },
+        { "text": "Bắt liên lạc với thủ hạ lãnh chúa để mặc cả", "nextScene": "negotiation" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "betrayal": {
+      "text": "Trong cuộc tấn công, bạn bị một đồng minh phản bội — thủ hạ lãnh chúa dàn cảnh để bắt được kẻ giữ nghi lễ. Bạn thoát mang theo thương tích và nỗi nghi ngờ sâu sắc.",
+      "image": "assets/images/medieval_betrayal.png",
+      "choices": [
+        { "text": "Rút lui, tập hợp lại lực lượng", "nextScene": "exile" },
+        { "text": "Bám sát và tìm kẻ phản bội", "nextScene": "thief_hideout" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "negotiation": {
+      "text": "Bạn đàm phán với một thủ hạ lãnh chúa, ông này có vẻ mệt mỏi trước chiến tranh. Ông đồng ý trao chút thông tin nếu bạn hứa bảo vệ dòng họ nhỏ của ông sau khi viên quang được xử lý.",
+      "image": "assets/images/medieval_negotiation.png",
+      "choices": [
+        { "text": "Hứa và nhận thông tin chiến lược", "nextScene": "ritual_clearing" },
+        { "text": "Lừa ông để lấy thông tin rồi bỏ đi", "nextScene": "ritual_corrupt" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "thief_hideout": {
+      "text": "Bạn lần ra dấu vết tới một ẩn thất: thủ lĩnh kẻ phản bội dùng huy hiệu bị lấy cắp. Ở đây bạn có thể thu hồi bằng chứng giúp phục hồi danh dự một người — hoặc tận dụng để mặc cả quyền lực.",
+      "image": "assets/images/medieval_thief_hideout.png",
+      "choices": [
+        { "text": "Lấy bằng chứng, trả lại cho góa phụ để xin ủng hộ", "nextScene": "widow" },
+        { "text": "Giữ làm vũ khí mặc cả", "nextScene": "ritual_corrupt" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "ritual_prep": {
+      "text": "Bạn tập hợp vật liệu: thánh ca từ tu viện, lá bùa từ ẩn sĩ, mảnh vải từ thợ xây và viên đá bích từ Hang Trăng. Mọi thứ chuẩn bị cho nghi lễ. Nhiều người tụ hội, và những âm mưu lẻn lút vẫn tồn tại quanh chu vi.",
+      "image": "assets/images/medieval_ritual_prep.png",
+      "choices": [
+        { "text": "Tiến hành nghi thức tập thể tại vòng đá", "nextScene": "ritual_clearing" },
+        { "text": "Giấu một phần vật phẩm để phòng bất trắc", "nextScene": "secret_groves" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "secret_groves": {
+      "text": "Bạn khám phá một khu rừng phụ — Grove of Whispers — nơi linh khí tụ. Tại đây một cây non mang dấu tích viên quang nở lạ. Bạn có thể dùng nơi này để che giấu viên quang nếu cần.",
+      "image": "assets/images/medieval_secret_grove.png",
+      "choices": [
+        { "text": "Che giấu viên quang tạm thời ở đây", "nextScene": "oak_shrine" },
+        { "text": "Bỏ qua, quay lại nghi thức", "nextScene": "ritual_clearing" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "ritual_clearing": {
+      "text": "Khoảng trống nghi lễ hiện ra: vòng đá, than tro, và hốc đá chờ viên quang. Người làng, tu viện, kị sĩ và ẩn sĩ tụ họp — khoảnh khắc quyết định vận mệnh. Một số nhân vật ẩn lộ dụng ý khác nhau: kẻ muốn bảo vệ, kẻ muốn chiếm và kẻ muốn phá hủy.",
+      "image": "assets/images/medieval_clearing.png",
+      "choices": [
+        { "text": "Tiến hành nghi thức tập thể — hiến quang cho cộng đồng", "nextScene": "ritual_success" },
+        { "text": "Giấu viên quang, nói dối mọi người rằng đã hiến", "nextScene": "ritual_corrupt" },
+        { "text": "Đề nghị hội đồng chôn viên quang sâu dưới rễ (hội đồng quyết định)", "nextScene": "council_choice" },
+        { "text": "Mang viên quang tạm vào Secret Grove để suy xét", "nextScene": "secret_groves" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "ritual_success": {
+      "text": "Nghi thức trang nghiêm: ánh sáng viên quang hòa vào lòng đất, cây cối sáng bừng, nỗi đói và bạo loạn dịu đi. Quan hệ giữa cộng đồng được hàn gắn. Tuy vậy, một số thế lực bên ngoài vẫn coi viên quang là mục tiêu.",
+      "image": "assets/images/medieval_ritual_success.png",
+      "choices": [
+        { "text": "Ở lại giúp cộng đồng bảo vệ di sản", "nextScene": "forest_good" },
+        { "text": "Rời đi, mang danh tiếng lan xa", "nextScene": "forest_neutral" },
+        { "text": "Dùng danh tiếng đấu tranh chính trị để loài sống khác", "nextScene": "forest_good" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "ritual_corrupt": {
+      "text": "Bạn chiếm đoạt viên quang ngay giữa nghi lễ. Lời thề bị phá vỡ: ánh sáng biến dạng, nhiều làng mất mùa, rừng hoang vu. Bạn có quyền lực nhưng bị cô lập; bạo lực và nổi loạn nổ ra quanh bạn.",
+      "image": "assets/images/medieval_ritual_corrupt.png",
+      "choices": [
+        { "text": "Dùng quyền lực ép buộc hòa bình bằng bạo lực", "nextScene": "forest_bad" },
+        { "text": "Cố chuộc lỗi bằng cách trả viên quang nhưng bị từ chối", "nextScene": "exile" },
+        { "text": "Tìm cách rời vùng và ẩn mình", "nextScene": "exile" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "council_choice": {
+      "text": "Hội đồng tranh luận: chôn viên quang sâu hay giao cho kị sĩ canh giữ. Quyết định thể hiện giá trị cộng đồng và nỗi sợ bị lạm dụng.",
+      "image": "assets/images/medieval_council.png",
+      "choices": [
+        { "text": "Chôn viên quang sâu dưới rễ để tránh bị lợi dụng", "nextScene": "forest_neutral" },
+        { "text": "Giao viên quang cho kị sĩ để canh giữ nhưng có rủi ro", "nextScene": "forest_good" },
+        { "text": "Đề nghị lập ủy ban liên minh để quản lý", "nextScene": "forest_good" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "exile": {
+      "text": "Sau nỗ lực chuộc lỗi, bạn bị trục xuất. Viên quang rời cộng đồng nhưng không được thuần hóa. Bạn lang thang, tạm tránh lời nguyền nhưng mang gánh nặng hối lỗi. Có cơ hội sống ẩn dật hoặc tìm chuộc bằng hành động khác.",
+      "image": "assets/images/medieval_exile.png",
+      "choices": [
+        { "text": "Sống ẩn dật để phục hồi danh dự", "nextScene": "forest_neutral" },
+        { "text": "Trả thù kẻ đã lợi dụng bạn — nguy cơ trở lại lời nguyền", "nextScene": "forest_bad" },
+        { "text": "Tìm cơ hội chuộc lỗi qua giúp đỡ người khác", "nextScene": "forgive_path" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "forgive_path": {
+      "text": "Bạn dành thời gian chữa lành nạn nhân chiến tranh: giúp xây lại nhà cửa, dạy con trẻ và bảo vệ mùa màng. Dần dần, cộng đồng bắt đầu tha thứ — nhưng viên quang thì vẫn là một vết mốc trong lịch sử.",
+      "image": "assets/images/medieval_forgive_path.png",
+      "choices": [
+        { "text": "Tiếp tục ở lại và xây dựng lại", "nextScene": "forest_neutral" },
+        { "text": "Quay lại vòng đá sau nhiều năm để xem kết quả", "nextScene": "ritual_clearing" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "forest_good": {
+      "text": "Viên quang được dùng vì lợi ích chung: rừng và làng thịnh vượng, liên minh giữa tu viện và kị sĩ bền vững. Bạn được tôn vinh như người giữ lời thề. Tương lai ổn định, nhưng thế giới vẫn có những thử thách khác.",
+      "image": "assets/images/medieval_forest_good.png",
+      "choices": [],
+      "isEnding": true,
+      "endingType": "good",
+      "endingTitle": "Lời Thề Giữ Quang"
+    },
+    "forest_neutral": {
+      "text": "Viên quang chôn sâu hoặc được giao cho hội đồng: hòa bình mong manh nhưng tránh được tham vọng. Cuộc sống trở lại bình thường, nhưng một bí mật luôn rình rập trong lòng đất.",
+      "image": "assets/images/medieval_forest_neutral.png",
+      "choices": [],
+      "isEnding": true,
+      "endingType": "neutral",
+      "endingTitle": "Bí Tích Chôn Sâu"
+    },
+    "forest_bad": {
+      "text": "Viên quang trở thành nguồn cơn của tham vọng: quyền lực đổi lấy cô độc, đất đai hủy hoại, dân nghèo chịu khổ. Lời nguyền lan, và tên bạn bị khắc vào truyền thuyết như cảnh cáo về tham vọng.",
+      "image": "assets/images/medieval_forest_bad.png",
+      "choices": [],
+      "isEnding": true,
+      "endingType": "bad",
+      "endingTitle": "Lời Nguyền Cờ Liên Huy"
+    },
+    "blacksmith": {
+      "text": "Thợ rèn kiểm tra dây chuyền và nhận ra huy hiệu gia tộc: một dòng kỵ sĩ đã từng giữ viên quang. Ông mài một con dao nhỏ có khắc ký hiệu để bạn dễ mở một khóa đá nếu cần.",
+      "image": "assets/images/medieval_blacksmith.png",
+      "choices": [
+        { "text": "Nhận dao khắc ký hiệu, tới ritual_prep", "nextScene": "ritual_prep" },
+        { "text": "Dùng dao mở khóa đá lén lút", "nextScene": "relic_puzzle" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "thief_hideout": {
+      "text": "Bạn tìm thấy nơi ẩn náu của kẻ phản bội. Ở đây có danh sách những người đã bán thông tin cho lãnh chúa. Bạn có thể vạch tội để trả công cho người bị oan hoặc dùng nó để mặc cả quyền lực.",
+      "image": "assets/images/medieval_thief_hideout.png",
+      "choices": [
+        { "text": "Vạch tội, phục hồi danh dự cho nạn nhân", "nextScene": "widow" },
+        { "text": "Giữ danh sách và mặc cả quyền lực", "nextScene": "ritual_corrupt" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "mountain_refuge": {
+      "text": "Bạn tới một hang núi nơi những người tị nạn lập trại. Họ kể về một truyền thuyết phụ: nếu viên quang bị lệch khỏi vị trí, một 'bóng đen' sẽ sống trong rừng. Có một lão già tự xưng là chứng nhân ngày xưa.",
+      "image": "assets/images/medieval_mountain_refuge.png",
+      "choices": [
+        { "text": "Nghe câu chuyện và ghi nhớ", "nextScene": "ritual_clearing" },
+        { "text": "Hỏi về cách phong ấn bóng đen", "nextScene": "seal_knowledge" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "seal_knowledge": {
+      "text": "Lão già dẫn bạn tới một bản khắc: để phong ấn bóng đen cần ba vật: lông bạc, đá bích và tiếng thánh ca. Bạn đã thu thập phần lớn — giờ chỉ cần hợp lực cộng đồng.",
+      "image": "assets/images/medieval_seal_knowledge.png",
+      "choices": [
+        { "text": "Tập hợp vật phẩm để phong ấn", "nextScene": "ritual_prep" },
+        { "text": "Bỏ qua, tin vào sức mạnh cá nhân", "nextScene": "oak_shrine" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+
+    "/* ADDED - fix missing scenes */": {},
+    "marsh_trap": {
+      "text": "Bạn lạc vào vùng đầm lầy trong mù sương. Cây đước bấu lấy chân, mùi ẩm mốc và tiếng rền của đất như muốn nuốt chửng. Sau cùng bạn thoát nhưng mất nhiều đồ và tinh thần.",
+      "image": "assets/images/medieval_swamp.png",
+      "choices": [
+        { "text": "Vùng vẫy, tìm đường thoát và tiếp tục", "nextScene": "abandoned_chapel" },
+        { "text": "Ngồi im, cầu xin tha mạng", "nextScene": "forest_bad" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "old_mason": {
+      "text": "Lão thợ xây, mắt đã mờ, kể về việc tổ tiên đặt viên quang dưới gốc cây để bảo vệ mùa màng. Ông trao cho bạn một mảnh vải thêu — bằng chứng hữu hình cho lời thề và chỉ ra một lối tắt đi về phía 'Cờ Liên Huy'.",
+      "image": "assets/images/medieval_old_mason.png",
+      "choices": [
+        { "text": "Mang mảnh vải tới làng để nhận trợ giúp", "nextScene": "village" },
+        { "text": "Giữ mảnh vải, đi thẳng tới gốc cây", "nextScene": "oak_shrine" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "monastery": {
+      "text": "Tu viện cổ phía bắc vẫn còn vài thầy tu. Trụ trì nhận lá thư và ban cho bạn một lời cầu nguyện và đoạn kinh để dùng khi đối diện với thử thách; họ cũng nhắc về nghi lễ làm sạch và hậu quả nếu viên quang rơi vào tay quân phiệt.",
+      "image": "assets/images/medieval_monastery.png",
+      "choices": [
+        { "text": "Nhận phúc lành và tới ritual_prep", "nextScene": "ritual_prep" },
+        { "text": "Nghi ngờ tu viện và lẻn rời", "nextScene": "bandit_ambush" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "oak_shrine": {
+      "text": "Gốc 'Cờ Liên Huy' hiện ra trước mắt: thân cây khổng lồ, rễ ôm đá. Ở giữa một hốc nhỏ có một vật phát sáng: viên ngọc màu lam nhạt, rung như nhịp tim. Một giọng xưa vang: 'Chọn đi: trao, chôn hay nắm giữ — mỗi lối mang hệ quả.'",
+      "image": "assets/images/medieval_oak_shrine.png",
+      "choices": [
+        { "text": "Hiến viên quang tập thể tại vòng đá (tập thể đảm bảo)", "nextScene": "ritual_clearing" },
+        { "text": "Chôn viên quang sâu theo đề nghị hội đồng", "nextScene": "council_choice" },
+        { "text": "Nắm viên quang cho riêng mình", "nextScene": "ritual_corrupt" }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    }
+  }
+}
