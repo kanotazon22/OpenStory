@@ -5,15 +5,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .screen.active{display:flex;flex-direction:column}
 #story-selection{padding:20px;background:linear-gradient(135deg,#1c1c1c 0%,#2a2a2a 100%)}
 .header{text-align:center;margin-bottom:30px;padding-top:20px}
-.header h1{font-size:2.5rem;font-weight:800;color:#ffffff;margin-bottom:10px;text-shadow:2px 2px 4px rgba(0,0,0,0.8);letter-spacing:2px}
-.header p{font-size:1.1rem;color:#cccccc;opacity:0.9}
+.header h1{font-size:2.5rem;font-weight:800;color:#fff;margin-bottom:10px;text-shadow:2px 2px 4px rgba(0,0,0,0.8);letter-spacing:2px}
+.header p{font-size:1.1rem;color:#ccc;opacity:0.9}
 .story-list{display:flex;flex-direction:column;gap:15px}
 .story-card{background:#1a1a1a;border-radius:16px;padding:20px;box-shadow:0 8px 25px rgba(0,0,0,0.5);cursor:pointer;transition:all 0.3s ease;border:2px solid #333}
 .story-card:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(255,255,255,0.1);border-color:#666}
 .story-card:active{transform:translateY(-1px)}
-.story-icon{font-size:3rem;text-align:center;margin-bottom:15px}
-.story-info h3{font-size:1.4rem;font-weight:700;color:#ffffff;margin-bottom:8px}
-.story-description{color:#cccccc;font-size:0.95rem;line-height:1.5;margin-bottom:12px;word-wrap:break-word}
+.story-info h3{font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:8px}
+.story-description{color:#ccc;font-size:0.95rem;line-height:1.5;margin-bottom:12px;word-wrap:break-word}
 .story-meta{display:flex;flex-direction:column;gap:4px;font-size:0.85rem;color:#999}
 .story-meta span{display:block}
 #game-screen{background:#0f0f0f}
@@ -23,17 +22,52 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .story-title{font-size:1.2rem;font-weight:600;flex:1;word-wrap:break-word}
 .game-content{flex:1;padding:20px;overflow-y:auto;display:flex;flex-direction:column;gap:20px;word-wrap:break-word}
 .scene-container{background:#1a1a1a;border-radius:16px;padding:25px;box-shadow:0 4px 20px rgba(0,0,0,0.6);word-wrap:break-word;border:1px solid #333}
-.scene-image{text-align:center;margin-bottom:20px}
-.scene-icon{font-size:4rem;display:inline-block;padding:20px;background:linear-gradient(135deg,#2a2a2a 0%,#444444 100%);border-radius:50%;box-shadow:0 4px 15px rgba(0,0,0,0.8);color:#ffffff}
-.scene-text{font-size:1.1rem;line-height:1.7;color:#f5f5f5;text-align:justify;word-wrap:break-word;overflow-wrap:break-word;hyphens:auto}
+.scene-image{text-align:center;margin-bottom:25px;overflow:hidden;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,0.15)}
+.scene-image img{width:100%;height:200px;object-fit:cover;border-radius:12px;transition:transform 0.3s ease}
+.scene-image img:hover{transform:scale(1.05)}
+.scene-placeholder{width:100%;height:200px;background:linear-gradient(135deg,#2a2a2a 0%,#444 100%);display:flex;align-items:center;justify-content:center;border-radius:12px;color:#ccc;font-weight:600;font-size:1.1rem}
+.scene-image.loading{background:linear-gradient(90deg,#333 25%,#555 50%,#333 75%);background-size:200% 100%;animation:shimmer 1.5s infinite}
+.scene-icon{font-size:4rem;display:inline-block;padding:20px;background:linear-gradient(135deg,#2a2a2a 0%,#444 100%);border-radius:50%;box-shadow:0 4px 15px rgba(0,0,0,0.8);color:#fff}
+.scene-text{font-size:1.1rem;line-height:1.7;color:#f5f5f5;text-align:justify;word-wrap:break-word;overflow-wrap:break-word}
+.scene-text.animate{animation:fadeInText 1.5s ease-out forwards}
 .choices-container{display:flex;flex-direction:column;gap:12px}
-.choice-btn{background:#0a0a0a;border:2px solid #444;border-radius:12px;padding:18px;cursor:pointer;transition:all 0.2s ease;text-align:left;display:flex;align-items:flex-start;gap:15px;font-size:1rem;color:#f5f5f5;box-shadow:0 2px 8px rgba(0,0,0,0.8);word-wrap:break-word}
+.choice-btn{background:#0a0a0a;border:2px solid #444;border-radius:12px;padding:18px;cursor:pointer;transition:all 0.2s ease;text-align:left;display:flex;align-items:flex-start;gap:15px;font-size:1rem;color:#f5f5f5;box-shadow:0 2px 8px rgba(0,0,0,0.8);word-wrap:break-word;opacity:0;animation:slideInChoice 0.6s ease-out forwards}
 .choice-btn:hover{border-color:#777;background:#1a1a1a;transform:translateX(3px);box-shadow:0 4px 12px rgba(255,255,255,0.1)}
-.choice-number{background:linear-gradient(135deg,#333333 0%,#000000 100%);color:white;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.9rem;flex-shrink:0;margin-top:2px;border:1px solid #555}
+.choice-btn:nth-child(1){animation-delay:0.3s}
+.choice-btn:nth-child(2){animation-delay:0.6s}
+.choice-btn:nth-child(3){animation-delay:0.9s}
+.choice-btn:nth-child(4){animation-delay:1.2s}
+.choice-number{background:linear-gradient(135deg,#333 0%,#000 100%);color:white;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.9rem;flex-shrink:0;margin-top:2px;border:1px solid #555}
 .choice-text{flex:1;line-height:1.4;word-wrap:break-word;overflow-wrap:break-word}
-.game-footer{background:#0a0a0a;padding:15px 20px;border-top:1px solid #333;display:flex;flex-direction:column;gap:10px}
-.progress-bar{width:100%;height:6px;background:#333;border-radius:3px;overflow:hidden;border:1px solid #444}
-.progress-fill{height:100%;background:linear-gradient(90deg,#666666 0%,#ffffff 100%);border-radius:3px;transition:width 0.3s ease;width:0%}
+.game-footer{background:#0a0a0a;padding:15px 20px;border-top:1px solid #333;text-align:center}
+.scene-counter{font-size:0.9rem;color:#ccc;font-weight:500}
+#ending-screen{background:linear-gradient(135deg,#1a1a1a 0%,#000 100%);justify-content:center;align-items:center;text-align:center;padding:20px}
+.ending-container{background:#0a0a0a;border-radius:20px;padding:40px 30px;box-shadow:0 10px 30px rgba(0,0,0,0.8);max-width:100%;animation:fadeInUp 0.5s ease;word-wrap:break-word;border:2px solid #333}
+.ending-icon{font-size:5rem;margin-bottom:20px;color:#fff}
+.ending-title{font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:20px;word-wrap:break-word}
+.ending-text{font-size:1.1rem;line-height:1.6;color:#ccc;margin-bottom:30px;word-wrap:break-word}
+.ending-actions{display:flex;flex-direction:column;gap:12px}
+.primary-btn,.secondary-btn{padding:15px 25px;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;transition:all 0.2s ease;border:none}
+.primary-btn{background:linear-gradient(135deg,#333 0%,#000 100%);color:white;box-shadow:0 4px 15px rgba(0,0,0,0.6);border:1px solid #555}
+.primary-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,255,255,0.1);border-color:#777}
+.secondary-btn{background:#1a1a1a;color:#ccc;border:2px solid #444}
+.secondary-btn:hover{background:#2a2a2a;border-color:#666}
+.loading-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);display:none;justify-content:center;align-items:center;flex-direction:column;z-index:1000}
+.loading-overlay.active{display:flex}
+.loading-spinner{width:50px;height:50px;border:4px solid #333;border-left:4px solid #fff;border-radius:50%;animation:spin 1s linear infinite;margin-bottom:20px}
+.loading-text{font-size:1.1rem;color:#ccc;font-weight:500}
+.game-content::-webkit-scrollbar{width:6px}
+.game-content::-webkit-scrollbar-track{background:#1a1a1a;border-radius:3px}
+.game-content::-webkit-scrollbar-thumb{background:#555;border-radius:3px}
+.game-content::-webkit-scrollbar-thumb:hover{background:#777}
+@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeInText{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideInChoice{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@media (max-width:414px){.game-container{max-width:100%}}
+@media (max-width:375px){.header h1{font-size:2rem}.scene-icon{font-size:3rem;padding:15px}.story-card,.scene-container{padding:18px}.choice-btn{padding:15px}.ending-container{padding:30px 20px}}
+@media (max-width:320px){.header h1{font-size:1.8rem}.story-card{padding:15px}.scene-icon{font-size:2.5rem;padding:12px}.choice-btn{padding:15px 12px;font-size:0.95rem}.choice-number{width:25px;height:25px;font-size:0.8rem}.ending-icon{font-size:4rem}.ending-title{font-size:1.5rem}}
 .scene-counter{text-align:center;font-size:0.9rem;color:#cccccc;font-weight:500}
 #ending-screen{background:linear-gradient(135deg,#1a1a1a 0%,#000000 100%);justify-content:center;align-items:center;text-align:center;padding:20px}
 .ending-container{background:#0a0a0a;border-radius:20px;padding:40px 30px;box-shadow:0 10px 30px rgba(0,0,0,0.8);max-width:100%;animation:fadeInUp 0.5s ease;word-wrap:break-word;border:2px solid #333}
