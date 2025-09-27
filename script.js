@@ -1,4 +1,4 @@
-// Game Logic Manager (No Emoji Logic, No Progress Bar)
+// Game Logic Manager
 class ChoiceGameManager {
     constructor() {
         this.currentScene = null;
