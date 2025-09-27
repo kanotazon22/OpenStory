@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choice of Game</title>
+    <title>OpenStory</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -34,6 +34,46 @@
                     
                     <div class="scene-text" id="sceneText">
                         <!-- Scene description sẽ hiển thị ở đây -->
+                    </div>
+                </div>
+                
+                <div class="choices-container" id="choicesContainer">
+                    <!-- Choices sẽ được tạo động -->
+                </div>
+            </div>
+            
+            <div class="game-footer">
+                <div class="scene-counter">
+                    <span id="sceneCounter">Scene 1</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Màn hình kết thúc -->
+        <div id="ending-screen" class="screen">
+            <div class="ending-container">
+                <div class="ending-icon" id="endingIcon">🎭</div>
+                <div class="ending-title" id="endingTitle"></div>
+                <div class="ending-text" id="endingText"></div>
+                
+                <div class="ending-actions">
+                    <button id="playAgainBtn" class="primary-btn">Chơi lại</button>
+                    <button id="selectStoryBtn" class="secondary-btn">Chọn câu chuyện khác</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Đang tải...</div>
+    </div>
+
+    <script src="stories.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
                     </div>
                 </div>
                 
