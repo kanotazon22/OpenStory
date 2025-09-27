@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Story Game Builder Pro</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: #f8f9fa;
+            color: #212529;
+            line-height: 1.5;
+        }
+        
+        .header {
+            background: #212529;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #000;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        
+        .header p {
+            opacity: 0.8;
+            font-size: 1rem;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 1024px) {
+            .container { 
+                grid-template-columns: 1fr; 
+                gap: 15px;
+                padding: 15px;
+            }
+        }
+        
+        .panel {
+            background: white;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .panel-header {
+            background: #212529;
+            color: white;
+            padding: 15px 20px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .panel-content {
+            padding: 20px;
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #495057;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 2px solid #dee2e6;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.15s ease-in-out;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #495057;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            margin: 2px;
+            background: #212529;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.15s ease;
+        }
+        
+        .btn:hover {
+            background: #495057;
+        }
+        
+        .btn-sm {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+        
+        .btn-danger {
+            background: #dc3545;
+        }
+        
+        .btn-danger:hover {
+            background: #c82333;
+        }
+        
+        .btn-success {
+            background: #28a745;
+        }
+        
+        .btn-success:hover {
+            background: #218838;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            padding: 15px;
+            text-align: center;
+            border-radius: 4px;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #212529;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #6c757d;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+        
+        .toolbar {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .scene {
+            background: white;
+            border: 2px solid #dee2e6;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        
+        .scene.ending-good { border-left: 5px solid #28a745; }
+        .scene.ending-bad { border-left: 5px solid #dc3545; }
+        .scene.ending-neutral { border-left: 5px solid #6c757d; }
+        
+        .scene-header {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            border-bottom: 1px solid #dee2e6;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .scene-header:hover {
+            background: #e9ecef;
+        }
+        
+        .scene-title {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .scene-content {
+            padding: 15px;
+            display: none;
+        }
+        
+        .scene.expanded .scene-content {
+            display: block;
+        }
+        
+        .scene-controls {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+        
+        .choice {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 12px;
+            margin-bottom: 10px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .choice input {
+            margin: 0;
+            flex: 1;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 10px 0;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+        }
+        
+        pre {
+            background: #212529;
+            color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            margin: 0;
+        }
+        
+        .expand-icon {
+            transition: transform 0.15s ease;
+        }
+        
+        .scene.expanded .expand-icon {
+            transform: rotate(90deg);
+        }
+        
+        .quick-add {
+            background: #e9ecef;
+            border: 2px dashed #adb5bd;
+            border-radius: 4px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        
+        .quick-add:hover {
+            background: #dee2e6;
+            border-color: #6c757d;
+        }
+        
+        .scene-type-badge {
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+        
+        .badge-normal { background: #e9ecef; color: #495057; }
+        .badge-ending-good { background: #d4edda; color: #155724; }
+        .badge-ending-bad { background: #f8d7da; color: #721c24; }
+        .badge-ending-neutral { background: #d1ecf1; color: #0c5460; }
+        
+        .scene-id-editable {
+            background: transparent;
+            border: none;
+            font-weight: 600;
+            font-size: inherit;
+            color: inherit;
+            padding: 2px 4px;
+            margin-right: 8px;
+            border-radius: 3px;
+            min-width: 100px;
+        }
+        
+        .scene-id-editable:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .scene-id-editable:focus {
+            background: white;
+            color: #212529;
+            outline: 2px solid #495057;
+        }
+        
+        .rename-hint {
+            font-size: 10px;
+            color: #6c757d;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📖 Story Game Builder Pro</h1>
+        <p>Create Interactive Adventure Games</p>
+    </div>
+    
+    <div class="container">
+        <!-- Main Editor Panel -->
+        <div class="panel">
+            <div class="panel-header">
+                ✏️ Story Editor
+            </div>
+            
+            <div class="panel-content">
+                <!-- Story Info -->
+                <div class="form-group">
+                    <label>Title</label>
+                    <input id="title" value="My Story" onchange="updateStory()" placeholder="Enter story title...">
+                </div>
+                
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="description" onchange="updateStory()" rows="3" placeholder="Describe your story...">A mysterious adventure awaits...</textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Author</label>
+                        <input id="author" value="Author" onchange="updateStory()" placeholder="Your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Difficulty</label>
+                        <select id="difficulty" onchange="updateStory()">
+                            <option>Easy</option>
+                            <option>Medium</option>
+                            <option selected>Hard</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Stats -->
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-value" id="sceneCount">1</div>
+                        <div class="stat-label">Scenes</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="choiceCount">0</div>
+                        <div class="stat-label">Choices</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="endingCount">0</div>
+                        <div class="stat-label">Endings</div>
+                    </div>
+                </div>
+                
+                <!-- Toolbar -->
+                <div class="toolbar">
+                    <button class="btn" onclick="expandAllScenes()">📂 Expand All</button>
+                    <button class="btn" onclick="collapseAllScenes()">📁 Collapse All</button>
+                    <button class="btn btn-success" onclick="exportJSON()">📤 Export JSON</button>
+                    <button class="btn" onclick="importJSON()">📥 Import JSON</button>
+                </div>
+                
+                <!-- Quick Add -->
+                <div class="quick-add" onclick="showQuickAdd()">
+                    <strong>➕ Quick Add Scene</strong>
+                    <div style="font-size: 12px; color: #6c757d; margin-top: 5px;">Click to add a new scene</div>
+                </div>
+                
+                <!-- Scenes -->
+                <div id="scenes"></div>
+            </div>
+        </div>
+        
+        <!-- JSON Preview Panel -->
+        <div class="panel">
+            <div class="panel-header">
+                📋 JSON Output
+                <button class="btn btn-sm" onclick="copyJSON()">📋 Copy</button>
+            </div>
+            
+            <div class="panel-content">
+                <pre id="jsonOutput"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let story = {
+            title: "My Story",
+            description: "A mysterious adventure awaits...",
+            author: "Author",
+            difficulty: "Hard",
+            estimatedTime: "10-20 minutes",
+            scenes: {
+                start: {
+                    text: "The adventure begins...",
+                    image: "assets/images/start.png",
+                    choices: [],
+                    isEnding: false,
+                    endingType: "neutral",
+                    endingTitle: ""
+                }
+            }
+        };
+
+        function updateStory() {
+            story.title = document.getElementById('title').value;
+            story.description = document.getElementById('description').value;
+            story.author = document.getElementById('author').value;
+            story.difficulty = document.getElementById('difficulty').value;
+            updateStats();
+            updateJSON();
+        }
+
+        function updateStats() {
+            const scenes = Object.keys(story.scenes);
+            const choices = scenes.reduce((acc, id) => acc + story.scenes[id].choices.length, 0);
+            const endings = scenes.filter(id => story.scenes[id].isEnding).length;
+            
+            document.getElementById('sceneCount').textContent = scenes.length;
+            document.getElementById('choiceCount').textContent = choices;
+            document.getElementById('endingCount').textContent = endings;
+        }
+
+        function showQuickAdd() {
+            const id = prompt("Scene ID:", "");
+            if (id === null || id.trim() === '') return;
+            
+            const finalId = id.trim();
+            
+            if (story.scenes[finalId]) {
+                alert("Scene ID already exists!");
+                return;
+            }
+            
+            story.scenes[finalId] = {
+                text: "",
+                image: "assets/images/" + finalId + ".png",
+                choices: [],
+                isEnding: false,
+                endingType: "neutral",
+                endingTitle: ""
+            };
+            
+            renderScenes();
+            updateStats();
+            updateJSON();
+            
+            // Auto-expand the new scene
+            setTimeout(() => {
+                const sceneElement = document.querySelector(`[data-scene-id="${finalId}"]`);
+                if (sceneElement && !sceneElement.classList.contains('expanded')) {
+                    toggleScene(finalId);
+                }
+            }, 100);
+        }
+
+        function renameScene(oldId, newId) {
+            if (oldId === 'start') {
+                alert("Cannot rename start scene");
+                return false;
+            }
+            
+            if (newId.trim() === '' || oldId === newId) {
+                return false;
+            }
+            
+            if (story.scenes[newId]) {
+                alert("Scene ID already exists!");
+                return false;
+            }
+            
+            // Create new scene with new ID
+            story.scenes[newId] = { ...story.scenes[oldId] };
+            delete story.scenes[oldId];
+            
+            // Update all references to this scene
+            Object.values(story.scenes).forEach(scene => {
+                scene.choices.forEach(choice => {
+                    if (choice.nextScene === oldId) {
+                        choice.nextScene = newId;
+                    }
+                });
+            });
+            
+            renderScenes();
+            updateJSON();
+            
+            // Keep the renamed scene expanded
+            setTimeout(() => {
+                const sceneElement = document.querySelector(`[data-scene-id="${newId}"]`);
+                if (sceneElement) {
+                    sceneElement.classList.add('expanded');
+                }
+            }, 100);
+            
+            return true;
+        }
+
+        function deleteScene(id) {
+            if (id === 'start') {
+                alert("Cannot delete start scene");
+                return;
+            }
+            
+            if (!confirm(`Delete scene "${id}"?`)) return;
+            
+            delete story.scenes[id];
+            
+            // Remove references to this scene from choices
+            Object.values(story.scenes).forEach(scene => {
+                scene.choices = scene.choices.filter(choice => choice.nextScene !== id);
+            });
+            
+            renderScenes();
+            updateStats();
+            updateJSON();
+        }
+
+        function addChoice(sceneId) {
+            const text = prompt("Choice text:", "");
+            if (!text) return;
+            
+            story.scenes[sceneId].choices.push({
+                text: text,
+                nextScene: ""
+            });
+            
+            // Update without re-rendering to maintain expanded state
+            updateStats();
+            updateJSON();
+            
+            // Just re-render this specific scene to add the choice
+            const sceneElement = document.querySelector(`[data-scene-id="${sceneId}"]`);
+            const wasExpanded = sceneElement.classList.contains('expanded');
+            
+            renderSingleScene(sceneId);
+            
+            if (wasExpanded) {
+                setTimeout(() => {
+                    const newSceneElement = document.querySelector(`[data-scene-id="${sceneId}"]`);
+                    if (newSceneElement) {
+                        newSceneElement.classList.add('expanded');
+                    }
+                }, 10);
+            }
+        }
+
+        function deleteChoice(sceneId, choiceIndex) {
+            if (!confirm("Delete this choice?")) return;
+            
+            story.scenes[sceneId].choices.splice(choiceIndex, 1);
+            
+            // Keep scene expanded after choice deletion
+            const wasExpanded = document.querySelector(`[data-scene-id="${sceneId}"]`).classList.contains('expanded');
+            
+            renderSingleScene(sceneId);
+            updateStats();
+            updateJSON();
+            
+            if (wasExpanded) {
+                setTimeout(() => {
+                    const sceneElement = document.querySelector(`[data-scene-id="${sceneId}"]`);
+                    if (sceneElement) {
+                        sceneElement.classList.add('expanded');
+                    }
+                }, 10);
+            }
+        }
+
+        function updateScene(sceneId, field, value) {
+            if (field === 'isEnding') {
+                story.scenes[sceneId][field] = value;
+                if (!value) {
+                    story.scenes[sceneId].endingType = "neutral";
+                    story.scenes[sceneId].endingTitle = "";
+                }
+                
+                // Keep scene expanded after ending toggle
+                const wasExpanded = document.querySelector(`[data-scene-id="${sceneId}"]`).classList.contains('expanded');
+                renderSingleScene(sceneId);
+                if (wasExpanded) {
+                    setTimeout(() => {
+                        const sceneElement = document.querySelector(`[data-scene-id="${sceneId}"]`);
+                        if (sceneElement) {
+                            sceneElement.classList.add('expanded');
+                        }
+                    }, 10);
+                }
+            } else {
+                story.scenes[sceneId][field] = value;
+            }
+            
+            updateStats();
+            updateJSON();
+        }
+
+        function updateChoice(sceneId, choiceIndex, field, value) {
+            story.scenes[sceneId].choices[choiceIndex][field] = value;
+            updateJSON();
+        }
+
+        function toggleScene(sceneId) {
+            const sceneElement = document.querySelector(`[data-scene-id="${sceneId}"]`);
+            sceneElement.classList.toggle('expanded');
+        }
+
+        function expandAllScenes() {
+            document.querySelectorAll('.scene').forEach(scene => {
+                scene.classList.add('expanded');
+            });
+        }
+
+        function collapseAllScenes() {
+            document.querySelectorAll('.scene').forEach(scene => {
+                scene.classList.remove('expanded');
+            });
+        }
+
+        function renderSingleScene(sceneId) {
+            const existingScene = document.querySelector(`[data-scene-id="${sceneId}"]`);
+            if (!existingScene) return;
+            
+            const scene = story.scenes[sceneId];
+            const div = createSceneElement(sceneId, scene);
+            
+            existingScene.parentNode.replaceChild(div, existingScene);
+        }
+
+        function createSceneElement(id, scene) {
+            const div = document.createElement('div');
+            div.className = 'scene';
+            div.setAttribute('data-scene-id', id);
+            
+            // Add ending class
+            if (scene.isEnding) {
+                div.classList.add('ending-' + scene.endingType);
+            }
+            
+            const typeIcon = scene.isEnding ? 
+                (scene.endingType === 'good' ? '🏆' : scene.endingType === 'bad' ? '💀' : '🏁') : 
+                (id === 'start' ? '🚀' : '📍');
+            
+            const typeBadge = scene.isEnding ? 
+                `<span class="scene-type-badge badge-ending-${scene.endingType}">${scene.endingType.toUpperCase()} ENDING</span>` :
+                '<span class="scene-type-badge badge-normal">SCENE</span>';
+            
+            div.innerHTML = `
+                <div class="scene-header" onclick="toggleScene('${id}')">
+                    <div class="scene-title">
+                        <span class="expand-icon">▶</span>
+                        <span>${typeIcon}</span>
+                        ${id !== 'start' ? 
+                            `<input type="text" class="scene-id-editable" value="${id}" 
+                                    onblur="handleSceneRename(this, '${id}')" 
+                                    onkeydown="handleSceneRenameKeydown(event, this, '${id}')"
+                                    onclick="event.stopPropagation()">
+                             <span class="rename-hint">click to rename</span>` :
+                            `<span style="margin-left: 8px;">${id}</span>`
+                        }
+                        ${typeBadge}
+                    </div>
+                    <div class="scene-controls">
+                        ${id !== 'start' ? `<button class="btn btn-sm btn-danger" onclick="event.stopPropagation(); deleteScene('${id}')">🗑️</button>` : ''}
+                    </div>
+                </div>
+                
+                <div class="scene-content">
+                    <div class="form-group">
+                        <label>Scene Text</label>
+                        <textarea onchange="updateScene('${id}', 'text', this.value)" rows="3" placeholder="Enter scene description...">${scene.text}</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Image Path</label>
+                        <input value="${scene.image}" onchange="updateScene('${id}', 'image', this.value)">
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="ending_${id}" ${scene.isEnding ? 'checked' : ''} 
+                               onchange="updateScene('${id}', 'isEnding', this.checked)">
+                        <label for="ending_${id}">This is an ending scene</label>
+                    </div>
+                    
+                    ${scene.isEnding ? `
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Ending Type</label>
+                                <select onchange="updateScene('${id}', 'endingType', this.value)">
+                                    <option value="good" ${scene.endingType === 'good' ? 'selected' : ''}>🏆 Good Ending</option>
+                                    <option value="bad" ${scene.endingType === 'bad' ? 'selected' : ''}>💀 Bad Ending</option>
+                                    <option value="neutral" ${scene.endingType === 'neutral' ? 'selected' : ''}>🏁 Neutral Ending</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Ending Title</label>
+                                <input placeholder="Ending title..." value="${scene.endingTitle}" 
+                                       onchange="updateScene('${id}', 'endingTitle', this.value)">
+                            </div>
+                        </div>
+                    ` : `
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin: 15px 0 10px;">
+                            <label style="margin: 0; font-weight: 600;">Choices</label>
+                            <button class="btn btn-sm btn-success" onclick="addChoice('${id}')">➕ Add Choice</button>
+                        </div>
+                        
+                        ${scene.choices.map((choice, i) => `
+                            <div class="choice">
+                                <input value="${choice.text}" onchange="updateChoice('${id}', ${i}, 'text', this.value)" 
+                                       placeholder="Choice text...">
+                                <input value="${choice.nextScene}" onchange="updateChoice('${id}', ${i}, 'nextScene', this.value)" 
+                                       placeholder="Next scene ID...">
+                                <button class="btn btn-sm btn-danger" onclick="deleteChoice('${id}', ${i})">🗑️</button>
+                            </div>
+                        `).join('')}
+                    `}
+                </div>
+            `;
+            
+            return div;
+        }
+
+        function renderScenes() {
+            const container = document.getElementById('scenes');
+            container.innerHTML = '';
+            
+            Object.keys(story.scenes).forEach(id => {
+                const scene = story.scenes[id];
+                const div = createSceneElement(id, scene);
+                container.appendChild(div);
+            });
+        }
+
+        function handleSceneRename(input, oldId) {
+            const newId = input.value.trim();
+            if (newId !== oldId && newId !== '') {
+                if (renameScene(oldId, newId)) {
+                    return;
+                } else {
+                    input.value = oldId; // Revert if rename failed
+                }
+            }
+        }
+
+        function handleSceneRenameKeydown(event, input, oldId) {
+            if (event.key === 'Enter') {
+                input.blur();
+                event.preventDefault();
+            } else if (event.key === 'Escape') {
+                input.value = oldId;
+                input.blur();
+                event.preventDefault();
+            }
+        }
+
+        function updateJSON() {
+            document.getElementById('jsonOutput').textContent = JSON.stringify(story, null, 2);
+        }
+
+        function copyJSON() {
+            navigator.clipboard.writeText(JSON.stringify(story, null, 2))
+                .then(() => alert('JSON copied to clipboard!'))
+                .catch(() => alert('Failed to copy'));
+        }
+
+        function exportJSON() {
+            const blob = new Blob([JSON.stringify(story, null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = story.title.replace(/[^a-z0-9]/gi, '_') + '.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function importJSON() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            input.onchange = e => {
+                const file = e.target.files[0];
+                if (!file) return;
+                
+                const reader = new FileReader();
+                reader.onload = e => {
+                    try {
+                        const imported = JSON.parse(e.target.result);
+                        story = imported;
+                        
+                        // Update form fields
+                        document.getElementById('title').value = story.title || '';
+                        document.getElementById('description').value = story.description || '';
+                        document.getElementById('author').value = story.author || '';
+                        document.getElementById('difficulty').value = story.difficulty || 'Medium';
+                        
+                        renderScenes();
+                        updateStats();
+                        updateJSON();
+                        
+                        alert('Story imported successfully!');
+                    } catch (err) {
+                        alert('Invalid JSON file: ' + err.message);
+                    }
+                };
+                reader.readAsText(file);
+            };
+            input.click();
+        }
+
+        // Initialize
+        renderScenes();
+        updateStats();
+        updateJSON();
+        
+        // Expand start scene by default
+        setTimeout(() => toggleScene('start'), 100);
+    </script>
+</body>
+</html>
