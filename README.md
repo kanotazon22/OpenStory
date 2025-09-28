@@ -10,4 +10,4 @@ It aims to provide a lightweight tool/engine for building interactive story game
 - Easy to customize and expand  
 
 ## Web to play
-Link: https://kanotazon22.github.io/OpenStory/
+Link:https://kanotazon22.github.io/OpenStory/
