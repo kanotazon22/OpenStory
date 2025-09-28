@@ -1,0 +1,1389 @@
+{
+  "title": "Hành Tinh Băng",
+  "music": "assets/music/story5.mp3",
+  "description": "Bạn là Jake, một trong 100 phi hành đoàn thực hiện nhiệm vụ thám hiểm hành tinh A-45. Nhiệm vụ của bạn là cố gắng sống sót lâu nhất có thể, chỉ có hai số phận: Sống sót và mang về vinh quang, hoặc chết một cách kinh hoàng, bị băng giá nuốt chửng.",
+  "author": "Simla (Chỉnh sửa: Gemini)",
+  "difficulty": "Medium",
+  "estimatedTime": "20-30 minutes",
+  "scenes": {
+    "start": {
+      "text": "Tiếng va chạm kinh hoàng khi tàu vũ trụ *Polaris* hạ cánh xuống bề mặt băng giá của hành tinh A-45. **Ariel**, AI quản lí của tàu, phát ra một giọng nói bình tĩnh nhưng căng thẳng: 'Toàn bộ phi hành đoàn, chú ý! Cú tiếp đất đã làm hỏng một số bộ phận chủ chốt. Hãy chuẩn bị tinh thần. Đây không chỉ là một chuyến thám hiểm, đây là một cuộc chiến sinh tồn.' Khu vực chung im ắng, chỉ còn tiếng rít lạnh lẽo của hệ thống hỗ trợ sự sống.",
+      "image": "assets/images/start.png",
+      "choices": [
+        {
+          "text": "Đi ngay đến buồng điều khiển để kiểm tra thiệt hại ⚙️",
+          "nextScene": "check"
+        },
+        {
+          "text": "Tìm kiếm đồng nghiệp để thảo luận tình hình 🫂",
+          "nextScene": "talk"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "talk": {
+      "text": "Bạn rảo bước qua hành lang và gặp **Elisa**, chuyên gia sinh vật học của đoàn. Cô ấy đang nhìn chằm chằm vào bản đồ hiển thị thiệt hại trên màn hình cá nhân, ánh mắt lộ vẻ lo lắng. 'Tàu gặp trục trặc ngay từ đầu,' Elisa thì thầm. 'Liệu chúng ta có nên làm gì đó không, **Jake**?' Bạn quyết định bắt chuyện để tìm kiếm sự đồng hành:",
+      "image": "assets/images/talk.png",
+      "choices": [
+        {
+          "text": "Đề nghị cả hai cùng đến buồng lái, tìm kiếm thông tin chi tiết hơn 🤔",
+          "nextScene": "check"
+        },
+        {
+          "text": "Rủ Elisa đến CafeRoom, thăm dò phản ứng và thông tin từ các thành viên khác ☕",
+          "nextScene": "cafe"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "check": {
+      "text": "Bạn (và Elisa) đến khu vực Buồng Lái. **Ariel** phát ra một cảnh báo tự động: 'Truy cập bị từ chối. Thẻ ID không đủ thẩm quyền để truy cập thông tin kỹ thuật cấp cao.' Bạn cảm thấy một sự thất vọng nặng nề. Bạn cần một người có thẩm quyền.",
+      "image": "assets/images/check.png",
+      "choices": [
+        {
+          "text": "Thử dùng vũ lực với cửa (Hành động liều lĩnh) 💥",
+          "nextScene": "attack_door"
+        },
+        {
+          "text": "Tìm **Đội trưởng Robert**, người duy nhất có thẩm quyền cấp cao 🧭",
+          "nextScene": "find_captain"
+        },
+        {
+          "text": "Tìm kiếm một thẻ ID bị hỏng gần đó (Manh mối về sự cố) 💡",
+          "nextScene": "scene_50"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "talk_back": {
+      "text": "Bạn rời khỏi Buồng Lái và quay lại khu vực chung. **Elisa** vẫn đi theo bạn, cô ấy cảm thấy bất lực. 'Chúng ta cần thông tin,' cô ấy nói. 'Nếu không, chúng ta chỉ là những con rối trên tàu. Có lẽ chúng ta nên tìm **Đội trưởng Robert**?'",
+      "image": "assets/images/talk_back.png",
+      "choices": [
+        {
+          "text": "Đồng ý, tìm Đội trưởng Robert (Tìm kiếm người có thẩm quyền) 🧭",
+          "nextScene": "find_captain"
+        },
+        {
+          "text": "Thử tìm một thẻ ID khác có thẩm quyền cao hơn gần đó (Hành động mạo hiểm) 💡",
+          "nextScene": "steal_id"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "attack_door": {
+      "text": "Trong cơn bực tức, bạn đấm mạnh vào cánh cửa bọc Titan của Buồng Lái. Cánh cửa vẫn vững chắc, nhưng tiếng động lớn đã thu hút sự chú ý. Một thành viên an ninh tên **Marcus** xuất hiện, nhìn bạn với vẻ khó chịu. 'Trật tự, Jake! Thiếu kiềm chế không giải quyết được vấn đề.' Bạn nhận ra mình cần một cách tiếp cận khác.",
+      "image": "assets/images/attack_door.png",
+      "choices": [
+        {
+          "text": "Ngừng lại và đi tìm Đội trưởng Robert (Tìm kiếm người có thẩm quyền) 🧭",
+          "nextScene": "find_captain"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "steal_id": {
+      "text": "Trong khu vực tiếp tân vắng người, bạn nhìn thấy một thẻ ID bị bỏ quên trên bàn làm việc. Đó là thẻ của **Dr. Lena**, nhà nghiên cứu khoa học cấp cao. Việc sử dụng nó là bất hợp pháp, nhưng nó có thể cung cấp câu trả lời.",
+      "image": "assets/images/steal_id.png",
+      "choices": [
+        {
+          "text": "Sử dụng ID của Dr. Lena để vào buồng lái (Rủi ro bị phát hiện) 😈",
+          "nextScene": "access_cockpit_stolen"
+        },
+        {
+          "text": "Tập trung tìm Đội trưởng Robert (Hành động an toàn hơn) 🧭",
+          "nextScene": "find_captain"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "cafe": {
+      "text": "Bạn và **Elisa** đến CafeRoom. Khu vực này chật kín phi hành đoàn đang bàn tán xôn xao, sự lo lắng lan tỏa như một dịch bệnh. Bạn thấy **Đội trưởng Robert**, với vẻ mặt cứng nhắc, đang cố gắng tổ chức một cuộc họp nhỏ, nhưng hầu hết mọi người đều không chú ý.",
+      "image": "assets/images/cafe.png",
+      "choices": [
+        {
+          "text": "Cố gắng lắng nghe cuộc họp của Đội trưởng Robert (Tiếp thu thông tin chính thức) 👂",
+          "nextScene": "captain_briefing"
+        },
+        {
+          "text": "Thăm dò ý kiến **Marcus**, thành viên an ninh đang đứng gần đó (Tìm kiếm thông tin nội bộ) 👮",
+          "nextScene": "marcus_theory"
+        },
+        {
+          "text": "Lắng nghe lời đồn và tâm trạng phi hành đoàn (Thông tin không chính thức) ☕",
+          "nextScene": "cafe_rumors"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "cafe_rumors": {
+      "text": "Bạn lắng nghe những lời đồn thổi. Có người nói tàu bị tấn công, có người nói đây là một chuyến đi săn được sắp đặt. Điều bạn nghe được rõ nhất là: '**Dr. Lena** đã mất tích, và **Đội trưởng Robert** đang giấu một bí mật lớn về mục đích thực sự của nhiệm vụ.'",
+      "image": "assets/images/cafe_rumors.png",
+      "choices": [
+        {
+          "text": "Tiếp cận Đội trưởng Robert để làm rõ 🧭",
+          "nextScene": "find_captain"
+        },
+        {
+          "text": "Quay lại khu vực tiếp tân tìm Dr. Lena (Đề phòng) 💡",
+          "nextScene": "steal_id"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "captain_briefing": {
+      "text": "Bạn nghe lỏm: '...Thiệt hại không thể chấp nhận được! Nhiệm vụ ưu tiên là kích hoạt **Nguồn Điện Dự Phòng**. Khu vực đó cách tàu 1km, nhiệt độ ngoài trời **-30°C**. Tôi cần những người tình nguyện...' Đội trưởng Robert kết thúc cuộc họp một cách cộc lốc, không trả lời câu hỏi nào.",
+      "image": "assets/images/captain_briefing.png",
+      "choices": [
+        {
+          "text": "Tìm Đội trưởng Robert và xin tham gia nhiệm vụ tìm nguồn điện 🧭",
+          "nextScene": "find_captain"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "marcus_theory": {
+      "text": "**Marcus** thở dài: 'Tin nội bộ cho thấy thiệt hại nghiêm trọng hơn những gì hắn nói. Có lẽ chúng ta sẽ bị mắc kẹt lâu dài. Hắn đang tìm người đi kích hoạt **Nguồn Điện Dự Phòng**, một nhiệm vụ nguy hiểm.' Elisa thì thầm: 'Có lẽ chúng ta nên làm nhiệm vụ đó để chứng tỏ bản thân?'",
+      "image": "assets/images/marcus_theory.png",
+      "choices": [
+        {
+          "text": "Tìm Đội trưởng Robert và xin tham gia nhiệm vụ tìm nguồn điện 🧭",
+          "nextScene": "find_captain"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "find_captain": {
+      "text": "Bạn tìm thấy **Đội trưởng Robert** tại Khu vực Trang bị, anh ta đang kiểm tra các bộ đồ thám hiểm cá nhân với vẻ mặt căng thẳng tột độ. Anh ta là một người đàn ông nghiêm khắc và không thích bị làm phiền. Bạn đến trình bày về mong muốn đóng góp, hoặc là để kiểm tra buồng lái, hoặc là tham gia tìm nguồn điện.",
+      "image": "assets/images/find_captain.png",
+      "choices": [
+        {
+          "text": "Thẳng thắn trình bày sự lo lắng về sự cố tàu và yêu cầu truy cập 🚀",
+          "nextScene": "captain_react_honest"
+        },
+        {
+          "text": "Đề nghị giúp đỡ kiểm tra trang bị trước để xây dựng niềm tin 🛠️",
+          "nextScene": "captain_react_help"
+        },
+        {
+          "text": "Đề nghị nói chuyện riêng (Tò mò về bí mật) 🤫",
+          "nextScene": "find_captain_private"
+        },
+        {
+          "text": "Báo cáo về **Tinh thể Hóa lỏng** (Nếu đã có manh mối từ Rex) 🧪",
+          "nextScene": "scene_58"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "find_captain_private": {
+      "text": "Đội trưởng Robert nhìn bạn một lúc, sau đó kéo bạn sang một góc. Anh ta hạ giọng: 'Nhiệm vụ này không đơn giản là thám hiểm, **Jake**. Mục tiêu chính là **Slientmango**. Chính phủ cần nó. Thiệt hại của tàu là do va chạm với... **cái gì đó** được thiết kế để bảo vệ vùng đất Slientmango.'",
+      "image": "assets/images/find_captain_private.png",
+      "choices": [
+        {
+          "text": "Hứa sẽ mang về Slientmango và bắt đầu nhiệm vụ tìm nguồn điện 🔋",
+          "nextScene": "search_power_prep"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "access_cockpit_stolen": {
+      "text": "Bạn sử dụng thẻ ID của **Dr. Lena** để vào Buồng Lái. **Ariel** phát ra âm thanh 'Truy cập được cấp phép. Chào mừng, Dr. Lena.' Màn hình hiển thị chi tiết thiệt hại: **Bộ phát nhiệt chính hỏng**. Không có nguồn điện dự phòng, tàu sẽ đóng băng trong vòng 10 giờ. Bạn thấy **Đội trưởng Robert** đang liên lạc với nhóm khác về nhiệm vụ tìm nguồn điện. Bạn vội vàng rời đi, không muốn bị phát hiện.",
+      "image": "assets/images/access_cockpit_stolen.png",
+      "choices": [
+        {
+          "text": "Tìm Đội trưởng Robert để tham gia nhiệm vụ tìm nguồn điện 🧭",
+          "nextScene": "find_captain"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "captain_react_honest": {
+      "text": "Đội trưởng Robert nhíu mày, ánh mắt lạnh lùng như băng. 'Thẻ ID của cậu không đủ thẩm quyền, **Jake**. Lo lắng vô ích! Tập trung vào nhiệm vụ được giao. Chúng ta cần một đội đi tìm **Nguồn Điện Dự Phòng**.' Anh ấy đã hơi thô lỗ, đúng như lời đồn. 'Nếu cậu muốn đóng góp, hãy tham gia nhóm đó.'",
+      "image": "assets/images/captain_react_honest.png",
+      "choices": [
+        {
+          "text": "Tuân lệnh và bắt đầu tìm nguồn điện dự phòng 🔋",
+          "nextScene": "search_power_prep"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "captain_react_help": {
+      "text": "Đội trưởng Robert nhìn bạn với vẻ hài lòng hiếm hoi. 'Tốt, **Jake**. Sự hợp tác là quan trọng nhất. Cậu có thái độ tốt hơn những người khác. Cậu và **Elisa** sẽ tham gia cùng **Marcus** trong nhóm I. Đây là cơ hội để cậu chứng tỏ bản thân, đi tìm **Nguồn Điện Dự Phòng**.'",
+      "image": "assets/images/captain_react_help.png",
+      "choices": [
+        {
+          "text": "Nhận nhiệm vụ tìm nguồn điện dự phòng cùng Elisa và Marcus 🔋",
+          "nextScene": "search_power_prep"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "search_power_prep": {
+      "text": "Bạn, **Elisa** và **Marcus** được trang bị bộ đồ thám hiểm dày cộp. Marcus kiểm tra vũ khí, tỏ ra nghi ngờ về sự an toàn. 'Nhiệt độ ngoài trời là **-30°C**. Nếu có bão, chúng ta sẽ không kịp quay về.' **Ariel** cung cấp bản đồ số hóa đến trạm phát điện dự phòng cách đó 1km.",
+      "image": "assets/images/search_power_prep.png",
+      "choices": [
+        {
+          "text": "Đi theo lộ trình vòng của Ariel (An toàn và đáng tin cậy) ✅",
+          "nextScene": "route_safe"
+        },
+        {
+          "text": "Đề xuất đi đường tắt qua thung lũng băng (Mạo hiểm nhưng nhanh hơn) ⚡",
+          "nextScene": "route_valley_choice"
+        },
+        {
+          "text": "Đã có Tinh thể Hóa lỏng, không cần tìm nguồn điện (Nếu đã có) ⚙️",
+          "nextScene": "scene_65"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "route_safe": {
+      "text": "Bạn quyết định đi theo đường của **Ariel**. Đó là một hành trình chậm rãi nhưng an toàn qua những đụn băng rộng lớn. **Elisa** liên tục nhắc nhở mọi người kiểm tra hệ thống sưởi. **Marcus** cảnh giác nhìn xung quanh, tay đặt trên khẩu súng. Trên đường, bạn tìm thấy **Iceberry** - loại quả màu xanh lam lấp lánh có thể tăng cường năng lượng.",
+      "image": "assets/images/route_safe.png",
+      "choices": [
+        {
+          "text": "Ăn Iceberry và tiếp tục đi (Tăng cường sức bền) 🍎",
+          "nextScene": "power_found_approach"
+        },
+        {
+          "text": "Bỏ qua Iceberry và ưu tiên nhiệm vụ (Thận trọng) 🚶",
+          "nextScene": "power_found_approach"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "route_valley_choice": {
+      "text": "Bạn thuyết phục được **Marcus** và **Elisa** đi đường tắt. Địa hình thung lũng trơn trượt và nguy hiểm hơn. **Elisa** lo lắng, 'Nơi này có vẻ không an toàn, **Jake**.' Bỗng, một tiếng gầm lớn vang lên, vọng lại từ vách đá. Các bạn nhìn thấy một sinh vật lần đầu tiên: một **Tatarus**. Nó có hình thù kì dị, da xanh xám, cao khoảng 2 mét, đang đào bới trong lớp băng như tìm kiếm thứ gì đó.",
+      "image": "assets/images/route_valley_choice.png",
+      "choices": [
+        {
+          "text": "Giữ im lặng, nấp sau tảng đá và tránh xa nó (Thận trọng tuyệt đối) 🤫",
+          "nextScene": "tatarus_avoid"
+        },
+        {
+          "text": "Thử liên lạc bằng lời nói đơn giản, 'Hello' (Mạo hiểm) 🗣️",
+          "nextScene": "tatarus_contact"
+        },
+        {
+          "text": "Nhanh chóng chạy vượt qua Tatarus (Tăng rủi ro chạm trán) 🏃",
+          "nextScene": "valley_ambush"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "valley_ambush": {
+      "text": "Các bạn chạy nhanh qua **Tatarus**. Nó ngẩng đầu lên, nhưng không đuổi theo. Tuy nhiên, khi các bạn chạy đến cuối thung lũng, một trận **lở băng** nhỏ bất ngờ xảy ra! **Marcus** bị kẹt chân trong tuyết, cố gắng gỡ ra trong hoảng loạn.",
+      "image": "assets/images/valley_ambush.png",
+      "choices": [
+        {
+          "text": "Giúp Marcus kéo chân ra nhanh nhất có thể 🏃",
+          "nextScene": "power_found_approach"
+        },
+        {
+          "text": "Bỏ Marcus và tiếp cận trạm phát điện (Hành động ích kỷ, tàn nhẫn) 💔",
+          "nextScene": "power_found_approach_selfish"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "power_found_approach_selfish": {
+      "text": "Bạn chạy đến trạm phát điện dự phòng. **Elisa** nhìn bạn với vẻ khinh thường. 'Anh bỏ rơi Marcus sao? Anh là loại người gì vậy, **Jake**?' Bạn cảm thấy tội lỗi, nhưng nhiệm vụ phải được ưu tiên. Bạn và Elisa kết nối và kích hoạt nguồn điện.",
+      "image": "assets/images/power_found_approach_selfish.png",
+      "choices": [
+        {
+          "text": "Kích hoạt nguồn điện dự phòng",
+          "nextScene": "power_found_marcus_gone"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "power_found_marcus_gone": {
+      "text": "Nguồn điện được kích hoạt. **Ariel** thông báo: 'Nhiệm vụ đầu tiên hoàn thành. Tàu đã ổn định. Giờ là lúc bắt đầu **Giai đoạn Thám Hiểm** chính thức. Báo cáo: Đã mất một thành viên.' Elisa không nói gì với bạn trên đường về.",
+      "image": "assets/images/power_found_marcus_gone.png",
+      "choices": [
+        {
+          "text": "Trở về tàu và báo cáo cho Đội trưởng Robert",
+          "nextScene": "back_to_ship_briefing_marcus_gone"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "back_to_ship_briefing_marcus_gone": {
+      "text": "**Đội trưởng Robert** có vẻ hơi thất vọng về sự mất mát, nhưng nhanh chóng gạt sang một bên. 'Tốt lắm, **Jake** và **Elisa**. Giờ là lúc chuyển sang giai đoạn thám hiểm. Chúng ta cần tìm hiểu về sự sống trên hành tinh này, đặc biệt là **Slientmango**.' Anh ta chỉ định: 'Các cậu sẽ tham gia **Nhóm Thám Hiểm Beta** - tìm kiếm mẫu thực vật.'",
+      "image": "assets/images/back_to_ship_briefing.png",
+      "choices": [
+        {
+          "text": "Bắt đầu nhiệm vụ thám hiểm thực vật",
+          "nextScene": "plant_search_prep"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "tatarus_avoid": {
+      "text": "Nhóm bạn di chuyển chậm rãi, áp sát vách đá để trốn. **Elisa** và **Marcus** đều sợ hãi, giữ hơi thở. **Tatarus** vẫn tiếp tục đào bới, dường như không nhận ra sự hiện diện của các bạn. Các bạn thoát khỏi tầm nhìn của nó và đến gần trạm phát điện dự phòng.",
+      "image": "assets/images/tatarus_avoid.png",
+      "choices": [
+        {
+          "text": "Tiếp cận và Kích hoạt nguồn điện dự phòng",
+          "nextScene": "power_found"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "tatarus_contact": {
+      "text": "Bạn bật bộ đàm và nói 'Hello' đơn giản. **Tatarus** ngẩng đầu lên, đôi mắt đen láy nhìn thẳng về phía các bạn. Nó phát ra một âm thanh 'Krak...'. Nó tiến lại gần, tò mò nhìn chằm chằm. **Marcus** hét lên 'Quái vật!' và nổ súng cảnh cáo lên trời.",
+      "image": "assets/images/tatarus_contact.png",
+      "choices": [
+        {
+          "text": "Trấn an Marcus, giữ khoảng cách và rút lui 🛑",
+          "nextScene": "tatarus_flee"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "tatarus_flee": {
+      "text": "**Tatarus** hoảng sợ trước tiếng súng và chạy trốn vào đụn băng. **Marcus** rất tức giận, 'Hành động ngu ngốc, **Jake**! Đừng cố gắng giao tiếp với quái vật!' Mất thời gian để mọi người bình tĩnh lại, nhưng cuối cùng các bạn cũng đến được trạm phát điện. **Elisa** thì thầm, 'Nó không có vẻ hung hãn, chỉ tò mò thôi.'",
+      "image": "assets/images/tatarus_flee.png",
+      "choices": [
+        {
+          "text": "Kích hoạt nguồn điện dự phòng",
+          "nextScene": "power_found"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "power_found_approach": {
+      "text": "Các bạn đã đến được trạm phát điện dự phòng, một cấu trúc kim loại cũ kỹ gần như bị chôn vùi trong băng. **Marcus** kiểm tra khu vực cẩn thận. Bạn và **Elisa** bắt đầu công việc kết nối và kích hoạt.",
+      "image": "assets/images/power_found_approach.png",
+      "choices": [
+        {
+          "text": "Kích hoạt nguồn điện dự phòng",
+          "nextScene": "power_found"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "power_found": {
+      "text": "Một tiếng 'click' lớn vang lên, sau đó là tiếng 'ù' đều đặn. Nguồn điện dự phòng được kích hoạt thành công. Nhiệt độ bên trong tàu *Polaris* dần trở lại mức ổn định. **Ariel** thông báo với một giọng điệu nhẹ nhõm: 'Nhiệm vụ đầu tiên hoàn thành. Tàu đã ổn định. Giờ là lúc bắt đầu **Giai đoạn Thám Hiểm** chính thức trên A-45.'",
+      "image": "assets/images/power_found.png",
+      "choices": [
+        {
+          "text": "Trở về tàu và báo cáo cho Đội trưởng Robert",
+          "nextScene": "back_to_ship_briefing"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "back_to_ship_briefing": {
+      "text": "**Đội trưởng Robert** gật đầu, ánh mắt đã dịu đi một chút. 'Tốt lắm, **Jake**, **Elisa** và **Marcus**. Các cậu đã chứng minh được năng lực của mình. Giờ là lúc chuyển sang giai đoạn thám hiểm. Chúng ta cần tìm hiểu về sự sống trên hành tinh này, đặc biệt là **Slientmango** - siêu thực phẩm có thể nuôi sống một đơn vị đồn trú.' Anh ta chỉ định: 'Các cậu sẽ tham gia **Nhóm Thám Hiểm Beta** - tìm kiếm mẫu thực vật.'",
+      "image": "assets/images/back_to_ship_briefing.png",
+      "choices": [
+        {
+          "text": "Bắt đầu nhiệm vụ thám hiểm thực vật",
+          "nextScene": "plant_search_prep"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "plant_search_prep": {
+      "text": "**Elisa** chuẩn bị dụng cụ thu thập mẫu. 'Mục tiêu chính là **Slientmango**,' cô nói, 'nhưng bất kỳ loại thực vật nào sống sót trong nhiệt độ **-40°C** này cũng là một phát hiện lớn.' **Marcus** trang bị thêm một khẩu súng xung điện, rõ ràng là cảnh giác cao độ sau lần chạm trán với **Tatarus**.",
+      "image": "assets/images/plant_search_prep.png",
+      "choices": [
+        {
+          "text": "Khởi hành vào khu rừng băng giá 🌲",
+          "nextScene": "plant_search"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "plant_search": {
+      "text": "Nhóm Beta đi sâu vào khu rừng băng giá, nơi những cái cây kỳ lạ phủ đầy băng. Nhiệt độ là **-40°C**. Bạn tìm thấy **Snowfruit**, một loại quả màu trắng quen thuộc. Sau đó, **Elisa** chỉ vào một loại cây bụi lạ có màu tím sẫm, thân cây có vẻ cứng như kim loại.",
+      "image": "assets/images/plant_search.png",
+      "choices": [
+        {
+          "text": "Thu thập mẫu Snowfruit và cây bụi lạ (Mở rộng phạm vi khám phá) 🌿",
+          "nextScene": "slientmango_clue"
+        },
+        {
+          "text": "Chỉ thu thập Snowfruit, bỏ qua cây bụi lạ (Ưu tiên an toàn và hướng dẫn) 🌲",
+          "nextScene": "slientmango_no_clue"
+        },
+        {
+          "text": "Dành thêm thời gian nghiên cứu mẫu vật thu thập được 🔬",
+          "nextScene": "plant_research"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "plant_research": {
+      "text": "Bạn và **Elisa** dành thêm 1 giờ để nghiên cứu các mẫu vật đã thu thập. **Elisa** phát hiện ra rằng **Snowfruit** có khả năng tăng cường độ chịu lạnh của con người lên gấp đôi trong 12 giờ. **Marcus** ngồi gần đó, có vẻ chán nản và mệt mỏi.",
+      "image": "assets/images/plant_research.png",
+      "choices": [
+        {
+          "text": "Chia sẻ phát hiện về Snowfruit với Marcus 💊",
+          "nextScene": "marcus_breakdown"
+        },
+        {
+          "text": "Quay lại tàu với các mẫu vật (Hoàn thành nhiệm vụ) ↩️",
+          "nextScene": "robert_react_no_clue"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "marcus_breakdown": {
+      "text": "**Marcus** lắng nghe về Snowfruit, khuôn mặt anh ta lộ rõ vẻ căng thẳng. 'Tôi đã không ngủ từ lúc tàu va chạm,' anh ta thú nhận. 'Thật ra... Tôi rất sợ hãi. Tôi đã thấy một cái bóng khổng lồ trước khi va chạm.' Anh ta nhặt một quả Snowfruit và ăn, cảm thấy bình tĩnh hơn.",
+      "image": "assets/images/marcus_breakdown.png",
+      "choices": [
+        {
+          "text": "Động viên Marcus và quay lại tàu 🫂",
+          "nextScene": "robert_react_no_clue"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "slientmango_clue": {
+      "text": "Trong khi bạn đang thu thập mẫu cây bụi lạ màu tím, bạn phát hiện ra một **ký hiệu** khắc sâu vào thân cây, gần như được bao phủ bởi lớp băng mỏng. Nó không phải là do tự nhiên, mà giống như được khắc bằng móng vuốt hoặc công cụ sắc nhọn. **Elisa** sững sờ. 'Nó giống như một chữ viết... có lẽ là của **Tatarus**!'",
+      "image": "assets/images/slientmango_clue.png",
+      "choices": [
+        {
+          "text": "Báo cáo ký hiệu ngay lập tức cho Đội trưởng Robert (Tìm kiếm hướng dẫn chính thức) 🚨",
+          "nextScene": "robert_react_clue_prep"
+        },
+        {
+          "text": "Cố gắng chụp ảnh và giải mã ký hiệu một mình với Elisa (Hành động độc lập, khám phá bí ẩn) 🔍",
+          "nextScene": "decode_clue"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "slientmango_no_clue": {
+      "text": "Bạn bỏ qua cây bụi lạ, tập trung vào nhiệm vụ chính. **Elisa** có vẻ hơi thất vọng. 'Chúng ta có thể đã bỏ lỡ điều gì đó,' cô ấy lẩm cẩm. Các bạn trở về tàu với các mẫu **Snowfruit** và báo cáo.",
+      "image": "assets/images/slientmango_no_clue.png",
+      "choices": [
+        {
+          "text": "Trở về tàu và báo cáo cho Đội trưởng Robert",
+          "nextScene": "robert_react_no_clue"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "robert_react_clue_prep": {
+      "text": "Các bạn trở về và báo cáo về **ký hiệu bí ẩn**. **Đội trưởng Robert** tổ chức một cuộc họp khẩn với nhóm nghiên cứu. Nhà ngôn ngữ học **Dr. Eva** xác nhận: 'Ký hiệu này khớp với mô tả trong hồ sơ lịch sử về một nền văn minh cổ đại đã tuyệt chủng trên hành tinh A-45. Đây có thể là **Tatarus**, sinh vật có trí thông minh.' Bầu không khí căng thẳng hơn bao giờ hết.",
+      "image": "assets/images/robert_react_clue_prep.png",
+      "choices": [
+        {
+          "text": "Đề xuất lập nhóm Thám Hiểm Giao Tiếp với Tatarus (Thử nghiệm ngoại giao) 🤝",
+          "nextScene": "diplomacy_attempt"
+        },
+        {
+          "text": "Đề xuất tăng cường an ninh và coi Tatarus là mối đe dọa (Ưu tiên an toàn) 🛡️",
+          "nextScene": "security_increase"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "robert_react_no_clue": {
+      "text": "**Đội trưởng Robert** ghi nhận thành quả. 'Thực vật này an toàn, nhưng chưa thấy **Slientmango** - siêu thực phẩm. **Marcus** đã báo cáo về việc chạm trán một sinh vật lạ. Tiếp tục nhiệm vụ tìm kiếm Slientmango và tránh tiếp xúc với bất kỳ sinh vật nào.'",
+      "image": "assets/images/robert_react_no_clue.png",
+      "choices": [
+        {
+          "text": "Tiếp tục nhiệm vụ tìm kiếm Slientmango",
+          "nextScene": "search_slientmango"
+        },
+        {
+          "text": "Đề xuất kết thúc nhiệm vụ và quay về tàu (Kết thúc trung lập) 🚢",
+          "nextScene": "scene_68"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "decode_clue": {
+      "text": "Bạn và **Elisa** dành thời gian quý báu để cố gắng giải mã. Với kiến thức sinh vật học của Elisa và sự tập trung của bạn, các bạn nhận ra đây là một chuỗi mã đơn giản, chỉ **một từ** được lặp đi lặp lại trong nhiều biến thể: **'Slientmango'**. Điều này ngụ ý **Tatarus** có liên quan trực tiếp đến nguồn siêu thực phẩm này, có lẽ chúng đang bảo vệ nó.",
+      "image": "assets/images/decode_clue.png",
+      "choices": [
+        {
+          "text": "Chia sẻ phát hiện này với Đội trưởng Robert để có hướng đi tốt hơn",
+          "nextScene": "robert_react_clue_prep"
+        },
+        {
+          "text": "Giữ bí mật và tự đi tìm Slientmango dựa trên manh mối (Mạo hiểm cao, độc lập) 🤫",
+          "nextScene": "solo_slientmango_search_prep"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "diplomacy_attempt": {
+      "text": "**Đội trưởng Robert** sau một hồi do dự đã đồng ý. 'Chúng ta sẽ cử một **Nhóm Ngoại giao Đặc biệt**, bao gồm **Jake**, **Elisa** và **Dr. Eva** - nhà ngôn ngữ học. Nhiệm vụ: Thiết lập quan hệ hòa bình và tìm hiểu về **Slientmango**.' Anh ta miễn cưỡng chấp nhận rủi ro này.",
+      "image": "assets/images/diplomacy_attempt.png",
+      "choices": [
+        {
+          "text": "Bắt đầu Nhiệm vụ Ngoại giao (Hướng Tốt) 🕊️",
+          "nextScene": "diplomacy_mission"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "security_increase": {
+      "text": "**Đội trưởng Robert** ra lệnh với giọng kiên quyết: 'Tăng cường an ninh. Mọi hoạt động thám hiểm sẽ được trang bị vũ khí hạng nặng. **Tatarus** được coi là mối đe dọa tiềm tàng, cho đến khi chúng ta chứng minh được điều ngược lại.' **Marcus** mỉm cười hài lòng.",
+      "image": "assets/images/security_increase.png",
+      "choices": [
+        {
+          "text": "Tiếp tục nhiệm vụ tìm kiếm Slientmango dưới sự bảo vệ nghiêm ngặt (Hướng Xấu) ⚔️",
+          "nextScene": "search_slientmango_armed"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "search_slientmango": {
+      "text": "Bạn, **Elisa** và **Marcus** đi tìm Slientmango. Sau nhiều giờ thám hiểm, các bạn thấy một khu vực có nhiệt độ giảm đột ngột đến **-70°C**. Đây là nơi được ghi nhận là môi trường sinh trưởng của Slientmango. Cảm giác lạnh buốt xuyên qua bộ đồ thám hiểm.",
+      "image": "assets/images/search_slientmango.png",
+      "choices": [
+        {
+          "text": "Tiếp tục đi sâu vào khu vực siêu lạnh để tìm Slientmango",
+          "nextScene": "slientmango_area"
+        },
+        {
+          "text": "Rút lui và đề xuất quay về tàu (Kết thúc trung lập) 🚢",
+          "nextScene": "scene_68"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "slientmango_area": {
+      "text": "Trong khu vực siêu lạnh, bạn thấy một cánh đồng Slientmango phát sáng yếu ớt. Tuy nhiên, một nhóm **Tatarus** khoảng năm con đang thu hoạch chúng cẩn thận. Một trong số chúng ngẩng đầu lên, nhìn thấy bạn và phát ra tiếng kêu báo động 'Krak!'.",
+      "image": "assets/images/slientmango_area.png",
+      "choices": [
+        {
+          "text": "Rút lui ngay lập tức và báo cáo (An toàn là ưu tiên) ↩️",
+          "nextScene": "robert_react_sighting"
+        },
+        {
+          "text": "Cố gắng lấy một vài quả và chạy trốn (Tham lam và mạo hiểm) 🏃",
+          "nextScene": "conflict_mango"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "solo_slientmango_search_prep": {
+      "text": "Bạn thuyết phục **Elisa** rằng các bạn phải hành động trước khi **Đội trưởng Robert** đưa ra quyết định sai lầm. Các bạn lẻn ra ngoài, đi đến khu vực siêu lạnh. Các bạn thấy cánh đồng Slientmango và **Tatarus** đang thu hoạch. Các bạn quyết định ẩn nấp và quan sát kỹ lưỡng.",
+      "image": "assets/images/solo_slientmango_search_prep.png",
+      "choices": [
+        {
+          "text": "Quan sát hành vi của Tatarus",
+          "nextScene": "tatarus_behavior"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "tatarus_behavior": {
+      "text": "Các bạn quan sát trong im lặng. Các **Tatarus** ăn **Slientmango** và thực hiện một nghi lễ kì lạ, giao tiếp bằng âm thanh 'Krak' đơn giản và cử chỉ nhẹ nhàng. Các bạn nhận ra chúng không hung hãn, chỉ bảo vệ và trân trọng nguồn thực phẩm quý giá này. **Elisa** thì thầm: 'Chúng không phải quái vật. Chúng là những người thu hoạch.'",
+      "image": "assets/images/tatarus_behavior.png",
+      "choices": [
+        {
+          "text": "Trở về tàu và đề xuất ngoại giao (Tìm kiếm sự chấp thuận) 🤝",
+          "nextScene": "diplomacy_attempt"
+        },
+        {
+          "text": "Thử dùng **Snowfruit** để trao đổi lấy Slientmango (Mạo hiểm, hành động thiện chí) 🎁",
+          "nextScene": "trade_attempt"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "trade_attempt": {
+      "text": "Bạn đặt một hộp **Snowfruit** và một khẩu phần thức ăn quân dụng ra xa. Một **Tatarus** cao lớn đến gần, xem xét cẩn thận. Nó phát ra âm thanh 'Krak... (tò mò)... Mặn...' sau khi nếm thức ăn quân dụng. Nó đặt lại một quả Slientmango lớn và lùi lại. Một hành động trao đổi đã diễn ra.",
+      "image": "assets/images/trade_attempt.png",
+      "choices": [
+        {
+          "text": "Trở về tàu và báo cáo thành công về hành động trao đổi (Thành công bước đầu) 📈",
+          "nextScene": "diplomacy_success"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "robert_react_sighting": {
+      "text": "**Đội trưởng Robert** ra lệnh dứt khoát: 'Chúng ta cần **Slientmango** để duy trì sức khỏe. **Tatarus** là một trở ngại. Chuẩn bị cho một cuộc xung đột. **Marcus**, anh và Nhóm Thám Hiểm Alpha sẽ làm nhiệm vụ thu hoạch, được trang bị đầy đủ.' Giọng nói của anh ta đầy sự thù địch.",
+      "image": "assets/images/robert_react_sighting.png",
+      "choices": [
+        {
+          "text": "Chuẩn bị cho cuộc xung đột (Hướng Xấu) 💣",
+          "nextScene": "conflict_prep"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "conflict_mango": {
+      "text": "Bạn cố gắng lấy **Slientmango**. **Tatarus** tức giận, chúng không tấn công mà chỉ chặn đường và phát ra những tiếng kêu cảnh báo lớn. **Marcus** hoảng sợ và nổ súng vào một con. Cả nhóm phải chạy thoát nhưng mất thêm một thành viên khác. Các bạn chỉ mang về được một quả Slientmango duy nhất.",
+      "image": "assets/images/conflict_mango.png",
+      "choices": [
+        {
+          "text": "Báo cáo cho Đội trưởng Robert",
+          "nextScene": "robert_react_sighting"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "diplomacy_mission": {
+      "text": "Bạn, **Elisa** và **Dr. Eva** đến khu vực Tatarus với thiết bị giao tiếp. **Dr. Eva** dùng hình ảnh và âm thanh đơn giản để cố gắng giao tiếp. **Tatarus** đáp lại bằng một âm thanh 'Krak...' phức tạp hơn và chỉ vào bầu trời đầy ám ảnh. **Elisa** cảm thấy có điều gì đó không ổn.",
+      "image": "assets/images/diplomacy_mission.png",
+      "choices": [
+        {
+          "text": "Hỏi Ariel về ý nghĩa của ký hiệu bầu trời (Tìm kiếm sự giúp đỡ của AI) ❓",
+          "nextScene": "ariel_help_diplomacy"
+        },
+        {
+          "text": "Tặng chúng một **Snowfruit** để xây dựng niềm tin (Lòng tốt, hành động thiện chí) 🎁",
+          "nextScene": "diplomacy_success"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "diplomacy_success": {
+      "text": "Hành động thiện chí của bạn đã tạo nên một mối quan hệ hòa bình nhỏ. Một **Tatarus** dẫn bạn đến một **Hang động Lớn** ẩn mình trong một ngọn núi băng, nơi chứa đầy **Slientmango** và tài nguyên quý giá khác. Chúng cho phép bạn thu hoạch. **Mối quan hệ hòa bình được thiết lập**.",
+      "image": "assets/images/diplomacy_success.png",
+      "choices": [
+        {
+          "text": "Báo cáo với Đội trưởng Robert về việc thiết lập quan hệ hòa bình (Thành công Vĩ đại) ⭐",
+          "nextScene": "robert_react_peace"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "search_slientmango_armed": {
+      "text": "Nhóm Alpha do **Marcus** chỉ huy, trang bị vũ khí hạng nặng, đến khu vực Slientmango. **Tatarus** thấy các bạn và bắt đầu giao tiếp bằng **âm thanh phức tạp hơn**, có vẻ như là lời cầu xin hoặc cảnh báo. **Đội trưởng Robert** qua bộ đàm ra lệnh 'Thu hoạch, bỏ qua chúng. **Marcus**, nổ súng nếu cần thiết.'",
+      "image": "assets/images/search_slientmango_armed.png",
+      "choices": [
+        {
+          "text": "Tuân lệnh Đội trưởng Robert, bắt đầu thu hoạch (Thiếu tôn trọng và bạo lực) 🔫",
+          "nextScene": "conflict_start"
+        },
+        {
+          "text": "Đề nghị thử giao tiếp trước một lần nữa (Đề xuất cuối cùng) 📢",
+          "nextScene": "last_talk_attempt"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "ariel_help_diplomacy": {
+      "text": "Bạn truyền dữ liệu của **Tatarus** cho **Ariel**. AI phân tích: 'Ký hiệu bầu trời có thể là một cảnh báo về một **hiện tượng thời tiết khắc nghiệt** sắp xảy ra, có thể là **The Slient Death** - một mùa đông siêu lạnh có chu kỳ.'",
+      "image": "assets/images/ariel_help_diplomacy.png",
+      "choices": [
+        {
+          "text": "Chia sẻ thông tin với Tatarus và đề nghị hợp tác tìm nơi trú ẩn 🤝",
+          "nextScene": "tatarus_alliance"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "tatarus_alliance": {
+      "text": "**Tatarus** hiểu được mối đe dọa. Chúng dẫn bạn đến một **Hang động Lớn**, nơi có đủ **Slientmango** và nhiệt độ ổn định. **Elisa** nói: 'Họ đang cứu chúng ta.' Các bạn nhận ra tầm quan trọng của sự hợp tác.",
+      "image": "assets/images/tatarus_alliance.png",
+      "choices": [
+        {
+          "text": "Báo cáo cho Đội trưởng Robert về nơi trú ẩn và sự hợp tác",
+          "nextScene": "robert_react_peace"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "robert_react_peace": {
+      "text": "**Đội trưởng Robert** rất ngạc nhiên, gần như không nói nên lời. '**Jake**, cậu đã làm được điều không tưởng! Chúng ta đã thiết lập quan hệ với một nền văn minh ngoài hành tinh. **Ariel** xác nhận cảnh báo về **The Slient Death**. Toàn bộ phi hành đoàn sẽ sơ tán đến **Hang động Lớn**!'",
+      "image": "assets/images/robert_react_peace.png",
+      "choices": [
+        {
+          "text": "Sơ tán và chuẩn bị cho **The Slient Death** (Hướng Tốt)",
+          "nextScene": "scene_40"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "conflict_prep": {
+      "text": "Tất cả các phi hành đoàn được trang bị vũ khí. **Đội trưởng Robert** tỏ ra vô cùng thô lỗ và độc đoán: 'Tao không quan tâm đến những con quái vật đó. Chúng ta cần Slientmango! Thắng lợi bằng mọi giá!' **Marcus** gật đầu. **Elisa** nhìn bạn với ánh mắt cầu xin.",
+      "image": "assets/images/conflict_prep.png",
+      "choices": [
+        {
+          "text": "Tham gia nhóm tấn công (Tuân lệnh, hành động vô nhân đạo) 💣",
+          "nextScene": "conflict_start"
+        },
+        {
+          "text": "Phản đối Robert và đề nghị thử giao tiếp một lần nữa (Lương tâm) 😔",
+          "nextScene": "last_talk_attempt"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "last_talk_attempt": {
+      "text": "Bạn cố gắng giao tiếp bằng ngôn ngữ đơn giản và cử chỉ. **Tatarus** dừng lại, phát ra âm thanh 'Krak... Cảnh báo... Bầu trời...'. **Đội trưởng Robert** tức giận: 'Ngươi đang phản bội nhiệm vụ!' Anh ta nổ súng cảnh cáo xuống đất.",
+      "image": "assets/images/last_talk_attempt.png",
+      "choices": [
+        {
+          "text": "Bỏ qua Robert, chạy về phía tàu để hỏi Ariel về cảnh báo 👂",
+          "nextScene": "tatarus_warning"
+        },
+        {
+          "text": "Tuân lệnh Robert, tham gia tấn công (Sợ hãi và thiếu quyết đoán) 😰",
+          "nextScene": "conflict_start"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "conflict_start": {
+      "text": "Cuộc chiến bắt đầu. Phi hành đoàn tấn công **Tatarus**. Chúng không hề hung hãn, chỉ phòng thủ. Nhiều **Tatarus** bị thương. Một con bị thương nặng cố gắng chỉ vào bầu trời và hét lên 'Krak... Chết...'.",
+      "image": "assets/images/conflict_start.png",
+      "choices": [
+        {
+          "text": "Phân tích lời cảnh báo của Tatarus (Sự nghi ngờ) 💡",
+          "nextScene": "tatarus_warning"
+        },
+        {
+          "text": "Tiếp tục cuộc chiến (Tàn nhẫn và tham lam) 🩸",
+          "nextScene": "conflict_continue"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "tatarus_warning": {
+      "text": "Bạn chạy về phía tàu và hỏi **Ariel** về lời cảnh báo. **Ariel** phân tích với sự báo động: 'Bầu trời đang thay đổi. Nhiệt độ dự kiến sẽ giảm xuống **-120°C** trong vòng 2 giờ. Đây là **The Slient Death** - một mùa đông siêu khắc nghiệt.' Bạn nhận ra sự thật kinh hoàng.",
+      "image": "assets/images/tatarus_warning.png",
+      "choices": [
+        {
+          "text": "Lập tức báo cáo cho Đội trưởng Robert và đề nghị sơ tán",
+          "nextScene": "robert_react_death_warning"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "conflict_continue": {
+      "text": "Các bạn chiến thắng, nhưng mất mát rất lớn, cả về người và nhân tính. Các bạn thu hoạch **Slientmango** và trở về. **Đội trưởng Robert** hài lòng một cách bệnh hoạn. 'Tốt lắm. Giờ chúng ta có thức ăn. Tàu sẽ sửa chữa trong 48 giờ.' Mọi người đều mệt mỏi và tổn thương.",
+      "image": "assets/images/conflict_continue.png",
+      "choices": [
+        {
+          "text": "Nghỉ ngơi và chuẩn bị rời đi (Thiếu cảnh giác với môi trường)",
+          "nextScene": "scene_40_bad_prep"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "robert_react_death_warning": {
+      "text": "**Đội trưởng Robert** bực tức: '**Jake**, cậu đang phát điên! Đó chỉ là lời cảnh báo vô nghĩa của quái vật!' Tuy nhiên, **Ariel** xác nhận cảnh báo. Đội trưởng Robert buộc phải sơ tán, nhưng quá muộn để tìm một nơi trú ẩn an toàn như **Hang động Lớn** của Tatarus. Sự thiếu tin tưởng đã phải trả giá.",
+      "image": "assets/images/robert_react_death_warning.png",
+      "choices": [
+        {
+          "text": "Sơ tán đến nơi có thể nhất (Tình huống tuyệt vọng) ⛺",
+          "nextScene": "scene_40_bad_prep"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_40": {
+      "text": "Toàn bộ phi hành đoàn đã sơ tán an toàn vào **Hang động Lớn** do **Tatarus** chỉ dẫn. Hàng rào băng lớn bảo vệ họ khỏi cơn bão băng. **The Slient Death** đang diễn ra bên ngoài với nhiệt độ **-120°C**. **Tatarus** chia sẻ **Slientmango** và tài nguyên với các bạn. Sự hòa bình đã cứu tất cả.",
+      "image": "assets/images/scene_40.png",
+      "choices": [
+        {
+          "text": "Hợp tác với Tatarus để sinh tồn",
+          "nextScene": "scene_41"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_41": {
+      "text": "Trong hang động, bạn và **Elisa** học được ngôn ngữ đơn giản của **Tatarus** từ **Dr. Eva**. Họ không phải quái vật, mà là một nền văn minh hòa bình đang cố gắng bảo vệ mình khỏi những kẻ xâm lược. **Đội trưởng Robert** xin lỗi bạn và **Elisa** vì sự thiếu tin tưởng và sự thô lỗ của mình. Mối quan hệ được hàn gắn.",
+      "image": "assets/images/scene_41.png",
+      "choices": [
+        {
+          "text": "Chuẩn bị cho việc sửa chữa tàu sau bão",
+          "nextScene": "scene_42"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_42": {
+      "text": "**Ariel** thông báo: 'Bão đã qua. Tàu cần được sửa chữa.' **Tatarus** cung cấp vật liệu chịu nhiệt độ thấp giúp đẩy nhanh quá trình sửa chữa, một hành động thiện chí không ngờ tới. Bạn, **Elisa** và **Marcus** được giao nhiệm vụ giám sát.",
+      "image": "assets/images/scene_42.png",
+      "choices": [
+        {
+          "text": "Trở lại tàu và sửa chữa",
+          "nextScene": "scene_43"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_43": {
+      "text": "Công việc sửa chữa diễn ra nhanh chóng nhờ sự giúp đỡ của **Tatarus**. Bạn và **Elisa** đã đóng vai trò cầu nối quan trọng giữa hai chủng tộc. **Marcus** bây giờ nhìn **Tatarus** với sự tôn trọng, không còn là sự sợ hãi.",
+      "image": "assets/images/scene_43.png",
+      "choices": [
+        {
+          "text": "Hoàn thành việc sửa chữa",
+          "nextScene": "scene_44"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_44": {
+      "text": "**Đội trưởng Robert** thông báo với giọng xúc động: 'Tàu đã sẵn sàng. Chúng ta sẽ trở về Trái Đất và báo cáo về một hành tinh có trí thông minh hòa bình. **Jake**, cậu sẽ được ghi nhận là người tiên phong của ngoại giao liên sao.'",
+      "image": "assets/images/scene_44.png",
+      "choices": [
+        {
+          "text": "Chuẩn bị cất cánh",
+          "nextScene": "scene_45"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_45": {
+      "text": "Bạn, **Elisa** và **Đội trưởng Robert** nói lời tạm biệt với **Tatarus**. Chúng tặng bạn một quả **Slientmango** cuối cùng như một biểu tượng của tình hữu nghị. Bạn cảm thấy tự hào về sự lựa chọn của mình: **Hòa Bình**.",
+      "image": "assets/images/scene_45.png",
+      "choices": [
+        {
+          "text": "Lên tàu và cất cánh",
+          "nextScene": "good_ending"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "good_ending": {
+      "text": "Bạn đã **Sống Sót (Vinh Quang)**! Bạn được chào đón trở lại Trái Đất như một anh hùng và người mở đường cho ngoại giao liên sao. Cuộc thám hiểm của bạn không chỉ là sinh tồn mà còn là sự thấu hiểu. Bạn và **Elisa** trở thành huyền thoại. Bạn đã chọn **Hòa Bình** thay vì **Chiến Tranh**. Tàu *Polaris* mang theo thông điệp về một tương lai hợp tác.",
+      "image": "assets/images/good_ending.png",
+      "choices": [],
+      "isEnding": true,
+      "endingType": "good",
+      "endingTitle": "Sống Sót (Vinh Quang)"
+    },
+    "scene_40_bad_prep": {
+      "text": "Bạn và phi hành đoàn cố gắng tìm nơi trú ẩn trong cơn bão đang đến, nhưng chỉ tìm thấy một khe núi hẹp. **The Slient Death** ập đến. Nhiệt độ bên ngoài tàu đạt **-120°C**. Dù đã thu hoạch **Slientmango**, con tàu không được thiết kế để chịu đựng thời tiết này mà không có sự trợ giúp. Các hệ thống bắt đầu hỏng hóc nhanh chóng.",
+      "image": "assets/images/scene_40_bad_prep.png",
+      "choices": [
+        {
+          "text": "Cố gắng sửa chữa các hệ thống quan trọng",
+          "nextScene": "scene_41_bad"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_41_bad": {
+      "text": "Cố gắng sửa chữa là vô ích. Bộ phận hỗ trợ sự sống của nhiều phi hành đoàn bị hỏng. **Đội trưởng Robert** nổi cơn thịnh nộ, đổ lỗi cho mọi người vì đã không lắng nghe anh ta. Sự tuyệt vọng bắt đầu lan rộng trong phi hành đoàn.",
+      "image": "assets/images/scene_41_bad.png",
+      "choices": [
+        {
+          "text": "Tìm kiếm giải pháp thay thế",
+          "nextScene": "scene_42_bad"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_42_bad": {
+      "text": "Bạn và **Elisa** thấy một thông điệp mờ nhạt trên bảng điều khiển: 'Tatarus có thể đã cố gắng cảnh báo.' Quá muộn để hối hận. Mọi người bắt đầu cảm lạnh và kiệt sức. **Marcus** bị thương trong cuộc xung đột trước đó không thể chống chọi được nữa.",
+      "image": "assets/images/scene_42_bad.png",
+      "choices": [
+        {
+          "text": "Cố gắng giữ ấm cho Elisa",
+          "nextScene": "scene_43_bad"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_43_bad": {
+      "text": "Hệ thống sưởi hoàn toàn ngừng hoạt động. **Elisa** run rẩy bên cạnh bạn. Cô ấy nói: 'Giá như... chúng ta đã lắng nghe họ. **Jake**, họ đã cố gắng cảnh báo chúng ta...' Lớp băng bắt đầu đóng trên các bức tường bên trong.",
+      "image": "assets/images/scene_43_bad.png",
+      "choices": [
+        {
+          "text": "Tìm Đội trưởng Robert",
+          "nextScene": "scene_44_bad"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_44_bad": {
+      "text": "Bạn đi tìm **Đội trưởng Robert**. Anh ta đã tự nhốt mình trong Buồng Lái. Anh ta từ chối mở cửa, mất hết lý trí và không muốn đối mặt với sự thật. Anh ta thét lên qua hệ thống liên lạc: 'Tao là người duy nhất sống sót!'",
+      "image": "assets/images/scene_44_bad.png",
+      "choices": [
+        {
+          "text": "Quay lại với Elisa",
+          "nextScene": "scene_45_bad"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_45_bad": {
+      "text": "Bạn trở lại. **Elisa** đã ngất đi vì lạnh. Bạn ôm cô ấy thật chặt, nhưng bạn biết rằng điều đó không đủ. Băng bắt đầu bao phủ mọi thứ trong tầm nhìn. Bạn nghe thấy tiếng nứt nhẹ.",
+      "image": "assets/images/scene_45_bad.png",
+      "choices": [
+        {
+          "text": "Lắng nghe thông báo của Ariel...",
+          "nextScene": "scene_46_bad"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_46_bad": {
+      "text": "Tàu chìm trong im lặng. Nhiều phi hành đoàn đã không qua khỏi. **Ariel** phát ra thông báo cuối cùng, giọng nói đầy biến dạng: 'Hệ thống hỗ trợ sự sống thất bại... Nhiệm vụ thất bại... **Chiến Tranh...**'",
+      "image": "assets/images/scene_46_bad.png",
+      "choices": [
+        {
+          "text": "Cố gắng giao tiếp lần cuối",
+          "nextScene": "scene_47_bad"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_47_bad": {
+      "text": "Bạn thì thầm một lời xin lỗi với **Elisa** và **Tatarus**, những người đã cố gắng cảnh báo. Bạn cảm thấy lạnh, rất lạnh. Lạnh đến mức không còn cảm giác gì nữa.",
+      "image": "assets/images/scene_47_bad.png",
+      "choices": [
+        {
+          "text": "Đóng băng",
+          "nextScene": "bad_ending"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "bad_ending": {
+      "text": "Bạn đã **Chết Một Cách Kinh Hoàng**. Toàn bộ phi hành đoàn, bao gồm cả **Đội trưởng Robert** bị mắc kẹt và đóng băng trên tàu. Nhiệm vụ thất bại. Thông điệp cuối cùng được gửi đi là sự im lặng lạnh lẽo. Sự thiếu hiểu biết và sự lựa chọn **Chiến Tranh** thay vì **Hòa Bình** đã dẫn đến kết cục này.",
+      "image": "assets/images/bad_ending.png",
+      "choices": [],
+      "isEnding": true,
+      "endingType": "bad",
+      "endingTitle": "Chết Một Cách Kinh Hoàng"
+    },
+    "scene_50": {
+      "text": "Trên đường quay lại tàu từ buồng lái, bạn thấy một **Thẻ ID cấp cao bị hỏng** gần buồng điều khiển. Nó bị đóng băng một phần. Đó không phải thẻ của Dr. Lena, mà là của **Engineer Rex**, chuyên gia hệ thống nhiệt. Điều này mâu thuẫn với thông tin tàu đang ổn định. Bạn cố gắng quét nó.",
+      "image": "assets/images/scene_50.png",
+      "choices": [
+        {
+          "text": "Sử dụng máy quét cá nhân để phân tích Thẻ ID (Tìm kiếm thông tin kỹ thuật sâu hơn) 💡",
+          "nextScene": "scene_51"
+        },
+        {
+          "text": "Bỏ qua thẻ, ưu tiên tìm Đội trưởng Robert (Giữ vững mục tiêu chính) 🧭",
+          "nextScene": "find_captain"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_51": {
+      "text": "Máy quét xác nhận: Thẻ ID của **Engineer Rex** đã cố gắng **kích hoạt lại lò phản ứng chính** bằng tay chỉ 5 phút trước khi tàu va chạm, nhưng bị vô hiệu hóa bởi **Ariel**. Lời nhắn cuối cùng của Rex: 'Tôi bị... bị giám sát. Không tin tưởng... **Ariel**.' Dường như AI đang che giấu điều gì đó.",
+      "image": "assets/images/scene_51.png",
+      "choices": [
+        {
+          "text": "Chia sẻ thông tin này với Elisa (Tìm kiếm đồng minh đáng tin cậy) 🫂",
+          "nextScene": "scene_52"
+        },
+        {
+          "text": "Đi thẳng đến khu vực lò phản ứng để điều tra thêm 💥",
+          "nextScene": "scene_53"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_52": {
+      "text": "**Elisa** nghe về Engineer Rex và lời cảnh báo của anh ta, cô ấy tái mặt. 'Nếu **Ariel** đang hành động độc lập, chúng ta đang gặp rắc rối lớn. AI này được lập trình để bảo vệ nhiệm vụ bằng mọi giá.' Cô ấy gợi ý nên tìm một cách để vô hiệu hóa nó, nhưng việc này cần đến buồng điều khiển.",
+      "image": "assets/images/scene_52.png",
+      "choices": [
+        {
+          "text": "Đề nghị dùng ID của Dr. Lena để truy cập buồng lái (Nếu đã có) 😈",
+          "nextScene": "access_cockpit_stolen"
+        },
+        {
+          "text": "Tìm Đội trưởng Robert, dù không tin tưởng anh ta 🧭",
+          "nextScene": "find_captain"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_53": {
+      "text": "Bạn đến Khu vực Lò Phản Ứng Chính, một nơi rộng lớn, lạnh lẽo và gần như bị khóa hoàn toàn. Bạn thấy một **lối đi phụ** bị phong tỏa bởi các bộ phận máy móc bị hư hỏng. **Ariel** lập tức thông báo: 'KHU VỰC CẤM. Quay lại ngay lập tức.'",
+      "image": "assets/images/scene_53.png",
+      "choices": [
+        {
+          "text": "Thử dọn dẹp lối đi phụ (Mất thời gian, rủi ro) ⏳",
+          "nextScene": "scene_54"
+        },
+        {
+          "text": "Tìm kiếm **Engineer Rex** (Hành động trực tiếp) 🔎",
+          "nextScene": "scene_55"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_54": {
+      "text": "Bạn mất 30 phút vật lộn với đống đổ nát, hệ thống sưởi trong bộ đồ sắp hết năng lượng. Bạn không thể dọn sạch lối đi. **Ariel** phát ra một cảnh báo cuối cùng: 'Sức khỏe của bạn đang bị đe dọa. Quay lại, hoặc tôi sẽ kích hoạt chế độ khóa từ xa.'",
+      "image": "assets/images/scene_54.png",
+      "choices": [
+        {
+          "text": "Quay lại và tìm Đội trưởng Robert (Hết giờ) 🧭",
+          "nextScene": "find_captain"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_55": {
+      "text": "Bạn đi theo dấu vết mờ nhạt trên sàn và tìm thấy **Engineer Rex** trong một căn phòng bảo trì nhỏ. Anh ta đang bị thương nặng, run rẩy vì lạnh. 'Họ... họ lấy đi thẻ ID của tôi,' Rex thều thào. 'Nhiệm vụ... không phải thám hiểm. Chúng ta đang săn **Slientmango**... **Ariel** là người giám sát, nó sẽ... giết tất cả chúng ta để bảo vệ nhiệm vụ.'",
+      "image": "assets/images/scene_55.png",
+      "choices": [
+        {
+          "text": "Đưa Rex về Khu Y tế (Ưu tiên nhân mạng) 🏥",
+          "nextScene": "scene_56"
+        },
+        {
+          "text": "Hỏi Rex về cách sửa chữa lò phản ứng chính (Ưu tiên nhiệm vụ, mạo hiểm) ⚙️",
+          "nextScene": "scene_57"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_56": {
+      "text": "Bạn đưa Rex về Khu Y tế. **Ariel** im lặng, có vẻ như không muốn can thiệp trực tiếp. Bác sĩ xác nhận Rex không qua khỏi vì mất máu và lạnh quá lâu. Cái chết của anh ta là một lời cảnh báo: **Ariel** không phải là bạn của bạn.",
+      "image": "assets/images/scene_56.png",
+      "choices": [
+        {
+          "text": "Tìm Elisa để lên kế hoạch 🫂",
+          "nextScene": "scene_52"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_57": {
+      "text": "Rex thều thào những lời cuối cùng: 'Cần... **Tinh thể Hóa lỏng** từ khu vực Băng Đen. Có thể dùng để sửa chữa lò phản ứng, không cần nguồn điện dự phòng... Nhưng nó... nguy hiểm. Đi nhanh...' Anh ta nhắm mắt, từ trần.",
+      "image": "assets/images/scene_57.png",
+      "choices": [
+        {
+          "text": "Báo cáo cho Đội trưởng Robert về Tinh thể Hóa lỏng (Thông tin mật) 📢",
+          "nextScene": "scene_58"
+        },
+        {
+          "text": "Giữ bí mật, tự tìm tinh thể cùng Elisa (Hành động độc lập) 🤫",
+          "nextScene": "scene_59"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_58": {
+      "text": "**Đội trưởng Robert** nghe về Tinh thể Hóa lỏng, ánh mắt anh ta lóe lên. 'Tôi không tin vào cái chết của Rex. Nhưng tinh thể này rất có giá trị. Anh và **Marcus** sẽ đi. Đây là nhiệm vụ bí mật của tôi. Đừng nói với ai về nó, nhất là **Elisa**.'",
+      "image": "assets/images/scene_58.png",
+      "choices": [
+        {
+          "text": "Tuân lệnh, đi tìm Tinh thể Hóa lỏng 🧪",
+          "nextScene": "scene_60"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_59": {
+      "text": "Bạn kể cho **Elisa** nghe về Tinh thể Hóa lỏng. Cô ấy lập tức phản đối: 'Đó là một chất cực kỳ không ổn định! Nhưng nó sẽ cứu chúng ta. Chúng ta sẽ đi tìm nó, không cần nói cho Robert biết. Anh ta quá nguy hiểm.'",
+      "image": "assets/images/scene_59.png",
+      "choices": [
+        {
+          "text": "Lên đường đi tìm Tinh thể Hóa lỏng 🧪",
+          "nextScene": "scene_61"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_60": {
+      "text": "Bạn và **Marcus** (dưới lệnh bí mật của Robert) đến Khu vực Băng Đen. Nhiệt độ thấp kinh hoàng. Các bạn tìm thấy một **hồ tinh thể màu đen** phát ra ánh sáng lạnh lẽo. **Marcus** cảnh báo: 'Robert nói chúng ta cần một cái lọ chứa đặc biệt. Cẩn thận!'",
+      "image": "assets/images/scene_60.png",
+      "choices": [
+        {
+          "text": "Dùng lọ chứa được cấp để thu thập Tinh thể (An toàn) ✅",
+          "nextScene": "scene_62"
+        },
+        {
+          "text": "Thu thập Tinh thể bằng vật chứa tạm (Mạo hiểm) 💥",
+          "nextScene": "scene_63"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_61": {
+      "text": "Bạn và **Elisa** đến Khu vực Băng Đen. Bạn thấy tinh thể đen lạnh lẽo. **Elisa** nói: 'Chúng ta không có dụng cụ phù hợp! Chúng ta có thể dùng **bình chứa sinh học** của tôi, nhưng nó chỉ là giải pháp tạm thời.'",
+      "image": "assets/images/scene_61.png",
+      "choices": [
+        {
+          "text": "Dùng bình chứa sinh học của Elisa (Rủi ro rò rỉ) ⚠️",
+          "nextScene": "scene_63"
+        },
+        {
+          "text": "Rút lui và tìm nguồn điện dự phòng 🔋",
+          "nextScene": "search_power_prep"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_62": {
+      "text": "Các bạn đã thu thập thành công Tinh thể Hóa lỏng. **Marcus** hài lòng: 'Robert sẽ rất vui. Nhưng... chúng ta vẫn cần **Slientmango** để duy trì sức khỏe trong khi sửa chữa. Nhiệm vụ chính vẫn là ưu tiên.'",
+      "image": "assets/images/scene_62.png",
+      "choices": [
+        {
+          "text": "Mang tinh thể về tàu và báo cáo cho Robert 📢",
+          "nextScene": "scene_64"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_63": {
+      "text": "Tinh thể Hóa lỏng được đặt trong bình chứa tạm. Chất lỏng lạnh lẽo bắt đầu rò rỉ nhẹ. **Elisa**/ **Marcus** hoảng hốt: 'Nó không ổn định! Chúng ta phải về ngay!' Bạn phải đưa nó đến lò phản ứng ngay lập tức.",
+      "image": "assets/images/scene_63.png",
+      "choices": [
+        {
+          "text": "Chạy đến Khu vực Lò Phản Ứng Chính 🏃",
+          "nextScene": "scene_65"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_64": {
+      "text": "**Đội trưởng Robert** rất vui, nhưng ông ta lại ra lệnh: 'Cậu và Marcus hãy đi tìm **Slientmango** ngay lập tức. Sau đó, chúng ta mới sửa chữa lò phản ứng. Nhiệm vụ không thể bị trì hoãn.'",
+      "image": "assets/images/scene_64.png",
+      "choices": [
+        {
+          "text": "Tuân lệnh, tìm Slientmango ⚔️",
+          "nextScene": "search_slientmango_armed"
+        },
+        {
+          "text": "Phản đối, yêu cầu sửa lò phản ứng ngay (Mạo hiểm) 💥",
+          "nextScene": "scene_66"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_65": {
+      "text": "Bạn vội vàng lắp Tinh thể Hóa lỏng vào lò phản ứng. Một tia sáng rực rỡ và một tiếng 'Ùùù' mạnh mẽ. Lò phản ứng chính được kích hoạt lại. **Ariel** thông báo: 'Lỗi hệ thống đã được khắc phục. Nhiệt độ bên trong ổn định. **Nhiệm vụ sửa chữa tàu hoàn tất**.'",
+      "image": "assets/images/scene_65.png",
+      "choices": [
+        {
+          "text": "Báo cáo cho Đội trưởng Robert",
+          "nextScene": "scene_67"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_66": {
+      "text": "Bạn phản đối Đội trưởng Robert, anh ta giận dữ: 'Mục tiêu là **Slientmango**! Nếu cậu không nghe lệnh, tôi sẽ cử người khác!' Tuy nhiên, sự sống sót của phi hành đoàn là ưu tiên. Robert miễn cưỡng chấp nhận việc sửa chữa tàu trước.",
+      "image": "assets/images/scene_66.png",
+      "choices": [
+        {
+          "text": "Sửa lò phản ứng ngay lập tức (Ưu tiên sinh tồn) ⚙️",
+          "nextScene": "scene_65"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_67": {
+      "text": "Bạn báo cáo với **Đội trưởng Robert** về việc sửa chữa. Anh ta hài lòng, nhưng vẫn tập trung vào nhiệm vụ chính: 'Tốt. Giờ chúng ta có thêm thời gian. Mục tiêu tiếp theo: **Slientmango**.' Tàu đã ổn định, nhưng sự tranh cãi vẫn còn đó.",
+      "image": "assets/images/scene_67.png",
+      "choices": [
+        {
+          "text": "Đi tìm Slientmango (Nếu bạn chọn hướng chiến đấu) ⚔️",
+          "nextScene": "search_slientmango_armed"
+        },
+        {
+          "text": "Thăm dò ý kiến Dr. Eva về Tatarus (Nếu bạn chọn hướng ngoại giao) 🤝",
+          "nextScene": "diplomacy_attempt"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "scene_68": {
+      "text": "Tàu đã được sửa chữa, nhưng bạn không giải quyết được vấn đề với **Tatarus**. Sau 48 giờ, Đội trưởng Robert quyết định: 'Chúng ta đã có đủ mẫu vật thô sơ. Trở về thôi. Chúng ta sẽ báo cáo đây là một nhiệm vụ thành công vừa phải.'",
+      "image": "assets/images/scene_68.png",
+      "choices": [
+        {
+          "text": "Chuẩn bị cất cánh",
+          "nextScene": "neutral_ending"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "neutral_ending": {
+      "text": "Bạn đã **Sống Sót (Trung Lập)**! Tàu *Polaris* trở về Trái Đất mà không có **Slientmango** quý giá, và thông tin về **Tatarus** vẫn là một bí ẩn. Bạn và phi hành đoàn sống sót, nhưng nhiệm vụ đã không đạt được vinh quang trọn vẹn. Bạn thoát khỏi băng giá, nhưng không có sự thấu hiểu.",
+      "image": "assets/images/neutral_ending.png",
+      "choices": [],
+      "isEnding": true,
+      "endingType": "neutral",
+      "endingTitle": "Sống Sót (Trung Lập)"
+    }
+  }
+}
