@@ -9,4 +9,5 @@ It aims to provide a lightweight tool/engine for building interactive story game
 - Runs directly in the browser without installation  
 - Easy to customize and expand  
 
-## Project Structure
+## Web to play
+Link: https://kanotazon22.github.io/OpenStory/
