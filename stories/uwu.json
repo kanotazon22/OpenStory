@@ -1,0 +1,43 @@
+{
+  "title": "uwu",
+  "description": "uwu",
+  "author": "uwu",
+  "difficulty": "Easy",
+  "estimatedTime": "10-20 minutes",
+  "scenes": {
+    "start": {
+      "text": "uwu",
+      "image": "",
+      "choices": [
+        {
+          "text": "uwu",
+          "nextScene": "uwu2"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "uwu2": {
+      "text": "uwu",
+      "image": "",
+      "choices": [
+        {
+          "text": "uwu",
+          "nextScene": "uwu3"
+        }
+      ],
+      "isEnding": false,
+      "endingType": "neutral",
+      "endingTitle": ""
+    },
+    "uwu3": {
+      "text": "uwu",
+      "image": "",
+      "choices": [],
+      "isEnding": true,
+      "endingType": "good",
+      "endingTitle": "UwU"
+    }
+  }
+}
