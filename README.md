@@ -1,3 +1,6 @@
+> [!NOTE]
+> This project was discontinued due to internal reasons, but the repository owner hasn't archived it... maybe they forgot. 
+
 # OpenStory
 
 OpenStory is an open-source project developed by Simla and SillyCat.  
